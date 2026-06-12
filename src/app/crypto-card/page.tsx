@@ -25,6 +25,10 @@ import {
   ArrowRight,
   CheckCircle2,
   ShieldCheck,
+  Check,
+  X,
+  Zap,
+  Truck,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -201,44 +205,173 @@ export default function CryptoCardPage() {
         </Container>
       </Section>
 
-      {/* Virtual + physical issuance */}
+      {/* Virtual + physical cards — detailed comparison */}
       <Section className="section-divider border-t border-border bg-surface/40">
         <Container>
           <Reveal>
             <SectionHeading
-              eyebrow="Issuance"
+              eyebrow="Choose Your Card"
               title="Virtual in minutes. Physical wherever you are."
-              description="Start spending before your physical card even ships — every ZorianPay account can issue a virtual card instantly."
+              description="Two ways to spend the same balance — issue a virtual card instantly for online and mobile payments, or add a physical Visa card for in-store purchases and ATM withdrawals."
             />
           </Reveal>
-          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
+
+          <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {/* Virtual card panel */}
             <Reveal>
-              <Card className="h-full">
-                <IconBadge>
-                  <Smartphone className="h-5 w-5" />
-                </IconBadge>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">Virtual Card</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">
-                  Issued instantly inside the ZorianPay app. Add it to your
-                  mobile wallet for tap-to-pay, or use it directly for online
-                  purchases and subscriptions.
+              <div className="card-surface flex h-full flex-col rounded-3xl p-8">
+                <div className="flex items-start justify-between">
+                  <IconBadge className="h-14 w-14 rounded-2xl">
+                    <Smartphone className="h-6 w-6" />
+                  </IconBadge>
+                  <Pill>
+                    <Zap className="h-3 w-3 text-gold" /> Issued instantly
+                  </Pill>
+                </div>
+                <h3 className="mt-6 text-2xl font-bold text-foreground">
+                  Virtual Card
+                </h3>
+                <p className="mt-1 text-sm font-semibold uppercase tracking-widest text-gold">
+                  Free with every account
                 </p>
-              </Card>
+                <p className="mt-4 text-sm leading-6 text-muted">
+                  Created in seconds inside the ZorianPay app — no shipping, no
+                  waiting. Perfect for online checkout, subscriptions, and
+                  tap-to-pay through your phone.
+                </p>
+                <ul className="mt-6 flex-1 space-y-3 text-sm text-muted">
+                  {[
+                    "Live in under 60 seconds after verification",
+                    "Add to Apple Pay & Google Pay for contactless payments",
+                    "Use for online purchases, subscriptions & in-app payments",
+                    "Generate replacement card details anytime, free",
+                    "Separate card number keeps your main details private",
+                    "Freeze, unfreeze, or delete instantly from the app",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                        <Check className="h-3 w-3" />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8">
+                  <Button href="/contact" className="w-full">
+                    Get Your Virtual Card
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
             </Reveal>
-            <Reveal delay={60}>
-              <Card className="h-full">
-                <IconBadge>
-                  <Mail className="h-5 w-5" />
-                </IconBadge>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">Physical Card</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">
-                  A Visa-network card shipped worldwide, ready for in-store
-                  payments and ATM withdrawals. Activate it in seconds from the
-                  app on arrival.
+
+            {/* Physical card panel */}
+            <Reveal delay={80}>
+              <div className="relative flex h-full flex-col rounded-3xl border border-gold/30 bg-surface p-8">
+                <div className="pointer-events-none absolute inset-0 -z-10 mesh-bg rounded-3xl" />
+                <div className="flex items-start justify-between">
+                  <IconBadge className="h-14 w-14 rounded-2xl">
+                    <Mail className="h-6 w-6" />
+                  </IconBadge>
+                  <Pill>
+                    <Truck className="h-3 w-3 text-gold" /> Ships worldwide
+                  </Pill>
+                </div>
+                <h3 className="mt-6 text-2xl font-bold text-foreground">
+                  Physical Card
+                </h3>
+                <p className="mt-1 text-sm font-semibold uppercase tracking-widest text-gold">
+                  Included with Plus &amp; Black plans
                 </p>
-              </Card>
+                <p className="mt-4 text-sm leading-6 text-muted">
+                  A premium Visa card delivered to your door, anywhere in the
+                  world. Everything the virtual card does — plus in-store
+                  payments and cash access at ATMs.
+                </p>
+                <ul className="mt-6 flex-1 space-y-3 text-sm text-muted">
+                  {[
+                    "Tap, chip & PIN payments at millions of stores worldwide",
+                    "Withdraw local cash from ATMs in 150+ countries",
+                    "Contactless payments without your phone",
+                    "Numberless card design — details stay safe in the app",
+                    "Black tier: premium metal card with lounge access",
+                    "Express worldwide shipping with tracking",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                        <Check className="h-3 w-3" />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8">
+                  <Button href="/contact" className="w-full">
+                    Order Your Physical Card
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
             </Reveal>
           </div>
+
+          {/* Side-by-side spec table */}
+          <Reveal delay={120}>
+            <div className="card-surface mt-12 overflow-hidden rounded-3xl">
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[560px] text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="px-6 py-4 font-semibold text-foreground">
+                        Compare at a glance
+                      </th>
+                      <th className="px-6 py-4 font-semibold text-foreground">
+                        Virtual Card
+                      </th>
+                      <th className="px-6 py-4 font-semibold text-foreground">
+                        Physical Card
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border text-muted">
+                    {[
+                      { label: "Issuance time", virtual: "Under 60 seconds", physical: "5–10 business days" },
+                      { label: "Cost", virtual: "Free", physical: "Included with Plus & Black" },
+                      { label: "Online payments & subscriptions", virtual: true, physical: true },
+                      { label: "Apple Pay / Google Pay", virtual: true, physical: true },
+                      { label: "In-store tap, chip & PIN", virtual: false, physical: true },
+                      { label: "ATM cash withdrawals", virtual: false, physical: true },
+                      { label: "Works without your phone", virtual: false, physical: true },
+                      { label: "Instant replacement details", virtual: true, physical: false },
+                    ].map((row) => (
+                      <tr key={row.label}>
+                        <td className="px-6 py-4 font-medium text-foreground">
+                          {row.label}
+                        </td>
+                        {([row.virtual, row.physical] as const).map((value, i) => (
+                          <td key={i} className="px-6 py-4">
+                            {typeof value === "boolean" ? (
+                              value ? (
+                                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gold/15 text-gold">
+                                  <Check className="h-3.5 w-3.5" />
+                                </span>
+                              ) : (
+                                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-surface-2 text-muted-2">
+                                  <X className="h-3.5 w-3.5" />
+                                </span>
+                              )
+                            ) : (
+                              value
+                            )}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </Section>
 
