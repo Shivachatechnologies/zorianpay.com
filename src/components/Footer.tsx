@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { Container } from "./ui";
+import { AtSign, Briefcase, Send } from "lucide-react";
+
+const socials = [
+  { label: "Twitter / X", icon: AtSign },
+  { label: "LinkedIn", icon: Briefcase },
+  { label: "Telegram", icon: Send },
+];
 
 const footerLinks = {
   Product: [
@@ -83,13 +90,14 @@ export function Footer() {
               &copy; {new Date().getFullYear()} ZorianPay &mdash; Shivacha
               Technologies LLC. All rights reserved.
             </p>
-            <div className="flex gap-4">
-              {["Twitter / X", "LinkedIn", "Telegram"].map((social) => (
+            <div className="flex gap-3">
+              {socials.map((social) => (
                 <span
-                  key={social}
-                  className="text-sm text-muted transition-colors hover:text-gold"
+                  key={social.label}
+                  aria-label={social.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-gold/40 hover:text-gold"
                 >
-                  {social}
+                  <social.icon className="h-4 w-4" />
                 </span>
               ))}
             </div>

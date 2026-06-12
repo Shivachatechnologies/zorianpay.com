@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Container, Section, Eyebrow, Card } from "@/components/ui";
+import { Container, Section, Eyebrow, Card, IconBadge } from "@/components/ui";
+import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
+import { Headset, Building2, Newspaper, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -15,6 +17,7 @@ const contactCards = [
       "Questions about your account, card, or a transaction? Our support team is here to help.",
     detail: "support@zorianpay.com",
     href: "mailto:support@zorianpay.com",
+    icon: Headset,
   },
   {
     title: "Business Inquiries",
@@ -22,6 +25,7 @@ const contactCards = [
       "Interested in a Business account, partnerships, or API access? Reach out to our business team.",
     detail: "business@zorianpay.com",
     href: "mailto:business@zorianpay.com",
+    icon: Building2,
   },
   {
     title: "Press & Media",
@@ -29,6 +33,7 @@ const contactCards = [
       "For press inquiries, interviews, or media kits regarding ZorianPay or Shivacha Technologies LLC.",
     detail: "press@zorianpay.com",
     href: "mailto:press@zorianpay.com",
+    icon: Newspaper,
   },
 ];
 
@@ -37,27 +42,33 @@ export default function ContactPage() {
     <>
       {/* Hero */}
       <Section className="relative overflow-hidden pt-16 sm:pt-24">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_20%,rgba(240,185,11,0.12),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-0 -z-10 mesh-bg" />
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow>Contact Us</Eyebrow>
-            <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Let&apos;s <span className="gold-gradient-text">talk</span>
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-muted">
-              Whether you have a question about opening an account, need help
-              with your crypto card, or want to explore a Business
-              partnership, our team is ready to help.
-            </p>
+            <Reveal>
+              <Eyebrow>Contact Us</Eyebrow>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                Let&apos;s <span className="gold-gradient-text">talk</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="mt-6 text-lg leading-8 text-muted">
+                Whether you have a question about opening an account, need help
+                with your crypto card, or want to explore a Business
+                partnership, our team is ready to help.
+              </p>
+            </Reveal>
           </div>
         </Container>
       </Section>
 
       {/* Form + info grid */}
-      <Section className="border-t border-border bg-surface">
+      <Section className="section-divider border-t border-border bg-surface/40">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
-            <div className="lg:col-span-2">
+            <Reveal className="lg:col-span-2">
               <Card>
                 <h2 className="text-2xl font-bold tracking-tight text-foreground">
                   Send us a message
@@ -70,51 +81,68 @@ export default function ContactPage() {
                   <ContactForm />
                 </div>
               </Card>
-            </div>
+            </Reveal>
 
             <div className="space-y-6">
-              {contactCards.map((card) => (
-                <Card key={card.title}>
-                  <h3 className="text-lg font-semibold text-foreground">{card.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">{card.description}</p>
-                  <a
-                    href={card.href}
-                    className="mt-4 inline-flex items-center text-sm font-semibold text-gold hover:underline"
-                  >
-                    {card.detail}
-                  </a>
-                </Card>
+              {contactCards.map((card, i) => (
+                <Reveal key={card.title} delay={i * 80}>
+                  <Card>
+                    <IconBadge>
+                      <card.icon className="h-5 w-5" />
+                    </IconBadge>
+                    <h3 className="mt-4 text-lg font-semibold text-foreground">{card.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted">{card.description}</p>
+                    <a
+                      href={card.href}
+                      className="mt-4 inline-flex items-center text-sm font-semibold text-gold hover:underline"
+                    >
+                      {card.detail}
+                    </a>
+                  </Card>
+                </Reveal>
               ))}
 
-              <Card>
-                <h3 className="text-lg font-semibold text-foreground">Response Times</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">
-                  We aim to respond to all support and business inquiries
-                  within 24 hours. Plus and Business plan customers receive
-                  priority responses, typically within a few hours.
-                </p>
-              </Card>
+              <Reveal delay={contactCards.length * 80}>
+                <Card>
+                  <IconBadge>
+                    <Clock className="h-5 w-5" />
+                  </IconBadge>
+                  <h3 className="mt-4 text-lg font-semibold text-foreground">Response Times</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted">
+                    We aim to respond to all support and business inquiries
+                    within 24 hours. Plus and Business plan customers receive
+                    priority responses, typically within a few hours.
+                  </p>
+                </Card>
+              </Reveal>
             </div>
           </div>
         </Container>
       </Section>
 
       {/* Company info */}
-      <Section>
+      <Section className="section-divider border-t border-border">
         <Container>
-          <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-surface px-8 py-12 text-center sm:px-16">
-            <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(240,185,11,0.15),transparent_60%)]" />
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Shivacha Technologies LLC
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted">
-              ZorianPay is a product of Shivacha Technologies LLC, a
-              registered fintech company building borderless financial
-              infrastructure for the digital economy. All ZorianPay accounts,
-              cards, and services are provided in partnership with regulated
-              banking and custody partners.
-            </p>
-          </div>
+          <Reveal>
+            <div className="relative overflow-hidden rounded-3xl border border-gold/20 bg-surface px-8 py-12 text-center sm:px-16">
+              <div className="pointer-events-none absolute inset-0 -z-10 mesh-bg" />
+              <div className="flex justify-center">
+                <IconBadge>
+                  <Building2 className="h-5 w-5" />
+                </IconBadge>
+              </div>
+              <h2 className="mt-5 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                Shivacha Technologies LLC
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted">
+                ZorianPay is a product of Shivacha Technologies LLC, a
+                registered fintech company building borderless financial
+                infrastructure for the digital economy. All ZorianPay accounts,
+                cards, and services are provided in partnership with regulated
+                banking and custody partners.
+              </p>
+            </div>
+          </Reveal>
         </Container>
       </Section>
     </>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { Container, Button } from "./ui";
 
@@ -16,22 +17,31 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/75 backdrop-blur-xl">
       <Container className="flex h-20 items-center justify-between">
         <Logo />
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-muted transition-colors hover:text-gold"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-1 lg:flex">
+          {navLinks.map((link) => {
+            const active = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  active ? "text-foreground" : "text-muted hover:text-foreground"
+                }`}
+              >
+                {active && (
+                  <span className="absolute inset-0 rounded-full border border-border bg-surface" />
+                )}
+                <span className="relative">{link.label}</span>
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">

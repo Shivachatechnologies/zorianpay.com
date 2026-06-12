@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Container, Section, SectionHeading, Eyebrow, Button } from "@/components/ui";
+import { Reveal } from "@/components/Reveal";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -131,18 +133,24 @@ export default function FaqPage() {
     <>
       {/* Hero */}
       <Section className="relative overflow-hidden pt-16 sm:pt-24">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_20%,rgba(240,185,11,0.12),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-0 -z-10 mesh-bg" />
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow>FAQ</Eyebrow>
-            <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Frequently asked <span className="gold-gradient-text">questions</span>
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-muted">
-              Everything you need to know about ZorianPay accounts,
-              currencies, the crypto card, security, and billing. Can&apos;t find
-              what you&apos;re looking for? Reach out to our team directly.
-            </p>
+            <Reveal>
+              <Eyebrow>FAQ</Eyebrow>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                Frequently asked <span className="gold-gradient-text">questions</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="mt-6 text-lg leading-8 text-muted">
+                Everything you need to know about ZorianPay accounts,
+                currencies, the crypto card, security, and billing. Can&apos;t find
+                what you&apos;re looking for? Reach out to our team directly.
+              </p>
+            </Reveal>
           </div>
         </Container>
       </Section>
@@ -151,37 +159,50 @@ export default function FaqPage() {
       {categories.map((category, idx) => (
         <Section
           key={category.title}
-          className={idx % 2 === 1 ? "border-t border-border bg-surface" : ""}
+          className={
+            idx % 2 === 1
+              ? "section-divider border-t border-border bg-surface/40"
+              : "section-divider border-t border-border"
+          }
         >
           <Container>
-            <SectionHeading eyebrow="Help center" title={category.title} align="left" />
+            <Reveal>
+              <SectionHeading eyebrow="Help center" title={category.title} align="left" />
+            </Reveal>
             <div className="mt-10 max-w-3xl">
-              <FaqAccordion items={category.items} />
+              <Reveal delay={80}>
+                <FaqAccordion items={category.items} />
+              </Reveal>
             </div>
           </Container>
         </Section>
       ))}
 
       {/* CTA */}
-      <Section className="border-t border-border bg-surface">
+      <Section className="section-divider border-t border-border bg-surface/40">
         <Container>
-          <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-background px-8 py-16 text-center sm:px-16">
-            <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(240,185,11,0.15),transparent_60%)]" />
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Still have questions?
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-              Our support team is available around the clock to help with
-              anything from account setup to card issues and billing
-              questions.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact">Contact Support</Button>
-              <Button href="/pricing" variant="secondary">
-                View Pricing
-              </Button>
+          <Reveal>
+            <div className="relative overflow-hidden rounded-3xl border border-gold/20 bg-surface px-8 py-16 text-center sm:px-16">
+              <div className="pointer-events-none absolute inset-0 -z-10 mesh-bg" />
+              <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Still have questions?
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
+                Our support team is available around the clock to help with
+                anything from account setup to card issues and billing
+                questions.
+              </p>
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Button href="/contact">
+                  Contact Support
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+                <Button href="/pricing" variant="secondary">
+                  View Pricing
+                </Button>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </Section>
     </>

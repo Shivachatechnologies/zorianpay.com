@@ -1,6 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Container, Section, SectionHeading, Eyebrow, Button, Card } from "@/components/ui";
+import {
+  Container,
+  Section,
+  SectionHeading,
+  Eyebrow,
+  Button,
+  Card,
+  IconBadge,
+} from "@/components/ui";
+import { Reveal } from "@/components/Reveal";
+import {
+  ArrowRight,
+  ArrowDown,
+  CheckCircle2,
+  Landmark,
+  Coins,
+  Laptop,
+  Plane,
+  Briefcase,
+  Send,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Multi-Currency Wallets",
@@ -77,25 +97,25 @@ const regions = [
 
 const useCases = [
   {
-    icon: "🧑‍💻",
+    icon: Laptop,
     title: "Freelancers & Contractors",
     description:
       "Get paid in your client's currency — USD, EUR, GBP, or more — without losing money to forced conversions, then convert on your schedule.",
   },
   {
-    icon: "✈️",
+    icon: Plane,
     title: "Travelers",
     description:
       "Hold balances in the currencies of the countries you visit and spend with your ZorianPay card at local rates, no surprise fees.",
   },
   {
-    icon: "🏢",
+    icon: Briefcase,
     title: "Businesses",
     description:
       "Invoice international clients in their local currency, pay global vendors directly, and manage treasury across markets from one dashboard.",
   },
   {
-    icon: "💸",
+    icon: Send,
     title: "Remittances",
     description:
       "Send money home instantly using blockchain settlement rails, with transparent FX rates and minimal fees compared to legacy transfer services.",
@@ -107,60 +127,75 @@ export default function MultiCurrencyAccountsPage() {
     <>
       {/* Hero */}
       <Section className="relative overflow-hidden pt-16 sm:pt-24">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_10%,rgba(240,185,11,0.12),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-0 -z-10 mesh-bg" />
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <div className="flex justify-center">
-              <Eyebrow>Multi-Currency Wallets</Eyebrow>
-            </div>
-            <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              One wallet, <span className="gold-gradient-text">30+ currencies</span>, zero borders
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-muted">
-              Hold fiat and crypto side by side in a single ZorianPay wallet.
-              Get local account details for major regions via our banking
-              partners, convert instantly between currencies, and manage
-              every balance from one dashboard.
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact">Open a Multi-Currency Wallet</Button>
-              <Button href="/features" variant="secondary">
-                Explore All Features
-              </Button>
-            </div>
+            <Reveal>
+              <div className="flex justify-center">
+                <Eyebrow>Multi-Currency Wallets</Eyebrow>
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                One wallet, <span className="gold-gradient-text">30+ currencies</span>, zero borders
+              </h1>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="mt-6 text-balance text-lg leading-8 text-muted">
+                Hold fiat and crypto side by side in a single ZorianPay wallet.
+                Get local account details for major regions via our banking
+                partners, convert instantly between currencies, and manage
+                every balance from one dashboard.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Button href="/contact">
+                  Open a Multi-Currency Wallet
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+                <Button href="/features" variant="secondary">
+                  Explore All Features
+                </Button>
+              </div>
+            </Reveal>
           </div>
         </Container>
       </Section>
 
       {/* Currency grid */}
-      <Section className="border-t border-border bg-surface">
+      <Section className="section-divider border-t border-border bg-surface/40">
         <Container>
-          <SectionHeading
-            eyebrow="Supported Currencies"
-            title="Fiat and crypto, all in one place"
-            description="From major world currencies to leading digital assets, ZorianPay wallets support the money you actually use."
-          />
-          <div className="mt-16 grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-6">
-            {currencies.map((currency) => (
-              <div
-                key={currency.code}
-                className={`card-surface flex flex-col items-center justify-center rounded-xl py-5 text-center transition-colors hover:border-gold/40 ${
-                  currency.type === "crypto" ? "ring-1 ring-gold/20" : ""
-                }`}
-              >
-                <span className="text-sm font-bold tracking-wide text-foreground">
-                  {currency.code}
-                </span>
-                <span className="mt-1 text-[11px] text-muted">{currency.label}</span>
-              </div>
-            ))}
-          </div>
+          <Reveal>
+            <SectionHeading
+              eyebrow="Supported Currencies"
+              title="Fiat and crypto, all in one place"
+              description="From major world currencies to leading digital assets, ZorianPay wallets support the money you actually use."
+            />
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="mt-16 grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-6">
+              {currencies.map((currency) => (
+                <div
+                  key={currency.code}
+                  className={`card-surface flex flex-col items-center justify-center rounded-xl py-5 text-center transition-colors hover:border-gold/40 ${
+                    currency.type === "crypto" ? "ring-1 ring-gold/20" : ""
+                  }`}
+                >
+                  <span className="text-sm font-bold tracking-wide text-foreground">
+                    {currency.code}
+                  </span>
+                  <span className="mt-1 text-[11px] text-muted">{currency.label}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
           <p className="mt-6 text-center text-sm text-muted">
             Currencies highlighted with a gold ring are digital assets held
             and settled via blockchain rails. New currencies are added
             regularly — see{" "}
-            <Link href="/features" className="text-gold hover:underline">
-              all platform features
+            <Link href="/features" className="inline-flex items-center gap-1 text-gold hover:underline">
+              all platform features <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             .
           </p>
@@ -168,12 +203,12 @@ export default function MultiCurrencyAccountsPage() {
       </Section>
 
       {/* Instant conversion */}
-      <Section>
+      <Section className="section-divider border-t border-border">
         <Container>
           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-            <div>
+            <Reveal>
               <Eyebrow>Instant Conversion</Eyebrow>
-              <h2 className="mt-5 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="mt-5 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 Convert in seconds, at transparent rates
               </h2>
               <p className="mt-5 text-lg leading-8 text-muted">
@@ -183,25 +218,30 @@ export default function MultiCurrencyAccountsPage() {
                 to spend, send, or save right away.
               </p>
               <ul className="mt-6 space-y-3 text-sm text-muted">
-                <li className="flex gap-3">
-                  <span className="text-gold">✓</span> Real-time, published exchange rates
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-gold">✓</span> Convert crypto to fiat or fiat to crypto instantly
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-gold">✓</span> No minimum conversion amounts
-                </li>
+                {[
+                  "Real-time, published exchange rates",
+                  "Convert crypto to fiat or fiat to crypto instantly",
+                  "No minimum conversion amounts",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                      <CheckCircle2 className="h-3 w-3" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
               </ul>
-            </div>
-            <div className="flex justify-center lg:justify-end">
+            </Reveal>
+            <Reveal delay={120} className="flex justify-center lg:justify-end">
               <Card className="w-full max-w-md">
                 <p className="text-xs uppercase tracking-widest text-muted">You convert</p>
                 <div className="mt-2 flex items-center justify-between rounded-xl border border-border bg-background px-4 py-4">
                   <span className="text-2xl font-bold text-foreground">1,000.00</span>
                   <span className="text-sm font-semibold text-gold">USD</span>
                 </div>
-                <div className="mt-4 flex justify-center text-muted">↓</div>
+                <div className="mt-4 flex justify-center text-muted">
+                  <ArrowDown className="h-4 w-4" />
+                </div>
                 <p className="mt-2 text-xs uppercase tracking-widest text-muted">You receive</p>
                 <div className="mt-2 flex items-center justify-between rounded-xl border border-border bg-background px-4 py-4">
                   <span className="text-2xl font-bold gold-gradient-text">0.0152</span>
@@ -211,70 +251,95 @@ export default function MultiCurrencyAccountsPage() {
                   Live rate · settles instantly · no hidden fees
                 </p>
               </Card>
-            </div>
+            </Reveal>
           </div>
         </Container>
       </Section>
 
       {/* Regional account details */}
-      <Section className="border-t border-border bg-surface">
+      <Section className="section-divider border-t border-border bg-surface/40">
         <Container>
-          <SectionHeading
-            eyebrow="Local Account Details"
-            title="Get paid like a local, wherever you operate"
-            description="Through our banking partners, ZorianPay provides local account numbers and IBANs for major regions, so clients and partners can pay you through familiar domestic payment rails."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Local Account Details"
+              title="Get paid like a local, wherever you operate"
+              description="Through our banking partners, ZorianPay provides local account numbers and IBANs for major regions, so clients and partners can pay you through familiar domestic payment rails."
+            />
+          </Reveal>
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {regions.map((region) => (
-              <Card key={region.region}>
-                <div className="text-3xl">{region.flag}</div>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">{region.region}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">{region.details}</p>
-              </Card>
+            {regions.map((region, i) => (
+              <Reveal key={region.region} delay={i * 60}>
+                <Card className="h-full">
+                  <IconBadge>
+                    <Landmark className="h-5 w-5" />
+                  </IconBadge>
+                  <div className="mt-4 flex items-center gap-2">
+                    <span className="text-2xl leading-none">{region.flag}</span>
+                    <h3 className="text-lg font-semibold text-foreground">{region.region}</h3>
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-muted">{region.details}</p>
+                </Card>
+              </Reveal>
             ))}
           </div>
         </Container>
       </Section>
 
       {/* Use cases */}
-      <Section>
+      <Section className="section-divider border-t border-border">
         <Container>
-          <SectionHeading
-            eyebrow="Use Cases"
-            title="Built for the way modern money moves"
-            description="Whether you're earning, traveling, running a business, or supporting family abroad, ZorianPay wallets adapt to your needs."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Use Cases"
+              title="Built for the way modern money moves"
+              description="Whether you're earning, traveling, running a business, or supporting family abroad, ZorianPay wallets adapt to your needs."
+            />
+          </Reveal>
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {useCases.map((useCase) => (
-              <Card key={useCase.title}>
-                <div className="text-3xl">{useCase.icon}</div>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">{useCase.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">{useCase.description}</p>
-              </Card>
+            {useCases.map((useCase, i) => (
+              <Reveal key={useCase.title} delay={i * 60}>
+                <Card className="h-full">
+                  <IconBadge>
+                    <useCase.icon className="h-5 w-5" />
+                  </IconBadge>
+                  <h3 className="mt-4 text-lg font-semibold text-foreground">{useCase.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted">{useCase.description}</p>
+                </Card>
+              </Reveal>
             ))}
           </div>
         </Container>
       </Section>
 
       {/* CTA */}
-      <Section className="border-t border-border bg-surface">
+      <Section className="section-divider border-t border-border bg-surface/40">
         <Container>
-          <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-background px-8 py-16 text-center sm:px-16">
-            <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(240,185,11,0.15),transparent_60%)]" />
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Hold the world&apos;s money in one wallet
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-              Open a ZorianPay multi-currency wallet and start receiving,
-              converting, and spending across 30+ currencies today.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact">Open a Wallet</Button>
-              <Button href="/crypto-card" variant="secondary">
-                Explore the Crypto Card
-              </Button>
+          <Reveal>
+            <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-background px-8 py-16 text-center sm:px-16">
+              <div className="pointer-events-none absolute inset-0 -z-10 mesh-bg" />
+              <div className="flex justify-center">
+                <IconBadge className="h-14 w-14 rounded-2xl">
+                  <Coins className="h-6 w-6" />
+                </IconBadge>
+              </div>
+              <h2 className="mt-5 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Hold the world&apos;s money in one wallet
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
+                Open a ZorianPay multi-currency wallet and start receiving,
+                converting, and spending across 30+ currencies today.
+              </p>
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Button href="/contact">
+                  Open a Wallet
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+                <Button href="/crypto-card" variant="secondary">
+                  Explore the Crypto Card
+                </Button>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </Section>
     </>

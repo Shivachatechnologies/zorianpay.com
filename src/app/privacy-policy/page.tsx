@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Container, Section } from "@/components/ui";
+import { Container, Section, Eyebrow, Pill } from "@/components/ui";
+import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -101,22 +102,32 @@ const sections: { heading: string; body: string[] }[] = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <Section className="pt-16 sm:pt-24">
-      <Container>
-        <div className="mx-auto max-w-3xl">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Privacy Policy
-          </h1>
-          <p className="mt-4 text-sm text-muted">Last updated: June 1, 2026</p>
-          <p className="mt-6 text-base leading-7 text-muted">
-            This Privacy Policy describes how Shivacha Technologies LLC,
-            operating as ZorianPay, collects, uses, and protects your
-            information across our website, applications, and services.
-          </p>
+    <>
+      <Section className="relative overflow-hidden pt-16 sm:pt-24">
+        <div className="pointer-events-none absolute inset-0 -z-10 mesh-bg" />
+        <Container>
+          <Reveal className="mx-auto max-w-3xl">
+            <Eyebrow>Legal</Eyebrow>
+            <h1 className="mt-5 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              Privacy Policy
+            </h1>
+            <div className="mt-4">
+              <Pill>Last updated: June 1, 2026</Pill>
+            </div>
+            <p className="mt-6 text-base leading-7 text-muted">
+              This Privacy Policy describes how Shivacha Technologies LLC,
+              operating as ZorianPay, collects, uses, and protects your
+              information across our website, applications, and services.
+            </p>
+          </Reveal>
+        </Container>
+      </Section>
 
-          <div className="mt-12 space-y-10">
-            {sections.map((section) => (
-              <div key={section.heading}>
+      <Section className="pt-0">
+        <Container>
+          <div className="mx-auto max-w-3xl space-y-10">
+            {sections.map((section, i) => (
+              <Reveal key={section.heading} delay={i * 30}>
                 <h2 className="text-xl font-semibold text-foreground">
                   {section.heading}
                 </h2>
@@ -127,11 +138,11 @@ export default function PrivacyPolicyPage() {
                     </p>
                   ))}
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
-        </div>
-      </Container>
-    </Section>
+        </Container>
+      </Section>
+    </>
   );
 }
