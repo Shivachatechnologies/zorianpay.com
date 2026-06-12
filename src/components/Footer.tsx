@@ -23,7 +23,6 @@ const footerLinks = {
     { href: "/crypto-card", label: "Crypto Card" },
     { href: "/multi-currency-accounts", label: "Multi-Currency Accounts" },
     { href: "/security", label: "Security" },
-    { href: "/pricing", label: "Pricing" },
   ],
   Company: [
     { href: "/about", label: "About Us" },

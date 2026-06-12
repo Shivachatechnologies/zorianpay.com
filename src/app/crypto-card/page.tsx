@@ -192,8 +192,8 @@ export default function CryptoCardPage() {
                     Order Your Card
                     <ArrowRight className="h-4 w-4" />
                   </Button>
-                  <Button href="/pricing" variant="secondary">
-                    View Card Fees
+                  <Button href="/features" variant="secondary">
+                    Explore Features
                   </Button>
                 </div>
               </Reveal>
@@ -461,10 +461,9 @@ export default function CryptoCardPage() {
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-muted">
-            See the full breakdown of card fees, FX spreads, and ATM costs on
-            our{" "}
-            <Link href="/pricing" className="inline-flex items-center gap-1 text-gold hover:underline">
-              pricing page <ArrowRight className="h-3.5 w-3.5" />
+            Have questions about card fees, FX spreads, or ATM costs?{" "}
+            <Link href="/contact" className="inline-flex items-center gap-1 text-gold hover:underline">
+              Talk to our team <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             .
           </p>

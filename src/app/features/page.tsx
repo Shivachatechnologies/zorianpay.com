@@ -60,7 +60,7 @@ const platformFeatures = [
     title: "Instant FX Conversion",
     description:
       "Convert between currencies at live, transparent rates — no spread surprises, no waiting for settlement windows.",
-    href: "/pricing",
+    href: "/multi-currency-accounts",
   },
   {
     icon: Building2,
@@ -74,7 +74,7 @@ const platformFeatures = [
     title: "Savings & Yield Accounts",
     description:
       "Put idle balances to work with flexible savings accounts offering competitive yield on select currencies.",
-    href: "/pricing",
+    href: "/contact",
   },
   {
     icon: Smartphone,
@@ -239,8 +239,8 @@ export default function FeaturesPage() {
                   Open a ZorianPay Account
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="/pricing" variant="secondary">
-                  View Pricing
+                <Button href="/crypto-card" variant="secondary">
+                  Discover the Crypto Card
                 </Button>
               </div>
             </Reveal>
@@ -480,8 +480,8 @@ export default function FeaturesPage() {
                   Open an Account
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="/pricing" variant="secondary">
-                  View Pricing
+                <Button href="/crypto-card" variant="secondary">
+                  Discover the Crypto Card
                 </Button>
               </div>
             </div>

@@ -197,8 +197,8 @@ export default function FaqPage() {
                   Contact Support
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="/pricing" variant="secondary">
-                  View Pricing
+                <Button href="/features" variant="secondary">
+                  Explore Features
                 </Button>
               </div>
             </div>

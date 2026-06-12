@@ -12,7 +12,6 @@ const navLinks = [
   { href: "/crypto-card", label: "Crypto Card" },
   { href: "/multi-currency-accounts", label: "Multi-Currency" },
   { href: "/security", label: "Security" },
-  { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "Company" },
 ];
 
