@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Local receiving details make invoicing easier",
         body:
-          "Many multi-currency account providers, including ZorianPay, also issue local account details — such as IBANs or local routing numbers — for major currencies. This means a freelancer based in India can provide a client in Germany with a local-looking EUR IBAN, making the payment feel like a routine domestic transfer for the client, while the freelancer receives funds quickly and without the high fees often associated with international wire transfers.",
+          "Many multi-currency account providers, including ZorianPay, also make local account details — such as IBANs or local routing numbers — available via banking partners for major currencies. This means a freelancer based in India can provide a client in Germany with a local-looking EUR IBAN, making the payment feel like a routine domestic transfer for the client, while the freelancer receives funds quickly and without the high fees often associated with international wire transfers.",
       },
       {
         heading: "Getting started",
@@ -175,7 +175,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "5. Monitor your account and set up alerts",
         body:
-          "Most digital wallets and neobank accounts allow you to set up real-time notifications for transactions, logins from new devices, and changes to account settings. Take a few minutes to enable these alerts — they're one of the fastest ways to catch unauthorized activity early, when it's still possible to freeze a card, lock an account, or contact support before significant funds move. Periodically reviewing your transaction history, even when nothing seems wrong, also helps you build a habit of noticing when something looks unfamiliar.",
+          "Most digital wallets and crypto card accounts allow you to set up real-time notifications for transactions, logins from new devices, and changes to account settings. Take a few minutes to enable these alerts — they're one of the fastest ways to catch unauthorized activity early, when it's still possible to freeze a card, lock an account, or contact support before significant funds move. Periodically reviewing your transaction history, even when nothing seems wrong, also helps you build a habit of noticing when something looks unfamiliar.",
       },
       {
         heading: "Building a security habit, not just a checklist",

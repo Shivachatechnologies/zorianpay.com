@@ -39,7 +39,7 @@ const timeline = [
     year: "2021",
     title: "Shivacha Technologies LLC founded",
     description:
-      "A small team of fintech and blockchain engineers set out to build a neobank that treats crypto and fiat as equals, not afterthoughts.",
+      "A small team of fintech and blockchain engineers set out to build a digital finance platform that treats crypto and fiat as equals, not afterthoughts.",
   },
   {
     year: "2022",
@@ -51,7 +51,7 @@ const timeline = [
     year: "2023",
     title: "Multi-currency expansion",
     description:
-      "ZorianPay accounts expand to support 30+ fiat and crypto currencies with local IBAN and account details for major regions.",
+      "ZorianPay wallets expand to support 30+ fiat and crypto currencies, with local account and IBAN details for major regions made available via banking partners.",
   },
   {
     year: "2024",

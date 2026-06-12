@@ -11,7 +11,7 @@ const sections: { heading: string; body: string[] }[] = [
   {
     heading: "1. Introduction",
     body: [
-      "Shivacha Technologies LLC (\"ZorianPay\", \"we\", \"us\", or \"our\") provides a blockchain-based neobanking platform that includes multi-currency accounts, crypto card issuance, and blockchain settlement services (the \"Services\"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, create an account, or otherwise use the Services.",
+      "Shivacha Technologies LLC (\"ZorianPay\", \"we\", \"us\", or \"our\") provides a blockchain-based crypto card and multi-currency wallet platform that includes multi-currency wallets, crypto card issuance, and blockchain settlement services (the \"Services\"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, create an account, or otherwise use the Services.",
       "By accessing or using ZorianPay, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with the practices described here, please do not use the Services.",
     ],
   },

@@ -11,9 +11,9 @@ const stats = [
 
 const features = [
   {
-    title: "Multi-Currency Accounts",
+    title: "Multi-Currency Wallets",
     description:
-      "Hold, send, and receive USD, EUR, GBP, AED, INR and 25+ other currencies in one IBAN-enabled account.",
+      "Hold, send, and receive USD, EUR, GBP, AED, INR and 25+ other currencies in one wallet, with local account details available via banking partners.",
     href: "/multi-currency-accounts",
     icon: "🌐",
   },
@@ -105,7 +105,7 @@ export default function Home() {
         <Container>
           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
             <div>
-              <Eyebrow>Blockchain-Powered Neobank</Eyebrow>
+              <Eyebrow>Blockchain-Powered Crypto Card Platform</Eyebrow>
               <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                 Global money, <span className="gold-gradient-text">reimagined</span> for the
                 digital economy
@@ -271,7 +271,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-surface px-8 py-16 text-center sm:px-16">
             <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(240,185,11,0.15),transparent_60%)]" />
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Ready to bank without borders?
+              Ready to spend and move money without borders?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
               Join thousands of individuals and businesses using ZorianPay to

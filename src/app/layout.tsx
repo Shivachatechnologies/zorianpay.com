@@ -16,24 +16,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "ZorianPay | Neobanking, Multi-Currency Accounts & Crypto Cards",
+    default: "ZorianPay | Crypto Cards, Multi-Currency Wallets & Global Payments",
     template: "%s | ZorianPay",
   },
   description:
-    "ZorianPay is a blockchain-powered neobank from Shivacha Technologies LLC offering multi-currency accounts, instant global transfers, and crypto card issuance for individuals and businesses.",
+    "ZorianPay is a blockchain-powered crypto card and multi-currency wallet platform from Shivacha Technologies LLC offering multi-currency wallets, instant global transfers, and crypto card issuance for individuals and businesses.",
   keywords: [
     "ZorianPay",
-    "neobank",
+    "crypto card platform",
     "crypto card",
-    "multi-currency account",
-    "blockchain banking",
+    "multi-currency wallet",
+    "blockchain payments",
     "Shivacha Technologies LLC",
   ],
   metadataBase: new URL("https://zorianpay.com"),
   openGraph: {
-    title: "ZorianPay | Blockchain-Powered Neobanking",
+    title: "ZorianPay | Blockchain-Powered Crypto Card Platform",
     description:
-      "Multi-currency accounts, crypto card issuance, and borderless payments — powered by ZorianPay.",
+      "Multi-currency wallets, crypto card issuance, and borderless payments — powered by ZorianPay.",
     url: "https://zorianpay.com",
     siteName: "ZorianPay",
     type: "website",

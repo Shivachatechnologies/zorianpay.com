@@ -6,7 +6,7 @@ import { CardVisual } from "@/components/CardVisual";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Explore the full ZorianPay platform: multi-currency accounts, crypto card issuance, blockchain settlements, instant FX, virtual IBANs, business tools, and more.",
+    "Explore the full ZorianPay platform: multi-currency wallets, crypto card issuance, blockchain settlements, instant FX, local account details via banking partners, business tools, and more.",
 };
 
 const platformFeatures = [
@@ -40,9 +40,9 @@ const platformFeatures = [
   },
   {
     icon: "🏦",
-    title: "Virtual IBANs & Local Details",
+    title: "Local Account Details, via Banking Partners",
     description:
-      "Receive local account numbers and IBANs for major regions so you can get paid like a local, anywhere you operate.",
+      "Receive local account numbers and IBANs for major regions, provided through our banking partners, so you can get paid like a local, anywhere you operate.",
     href: "/multi-currency-accounts",
   },
   {
@@ -226,19 +226,20 @@ export default function FeaturesPage() {
         <Container>
           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
             <div>
-              <Eyebrow>Multi-Currency Accounts</Eyebrow>
+              <Eyebrow>Multi-Currency Wallets</Eyebrow>
               <h2 className="mt-5 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 Hold 30+ currencies — fiat and crypto — in one wallet
               </h2>
               <p className="mt-5 text-lg leading-8 text-muted">
                 Open balances in USD, EUR, GBP, AED, INR, JPY, and dozens more,
                 alongside BTC, ETH, USDT, and USDC. Receive local payments via
-                dedicated account numbers and IBANs, then convert instantly
-                whenever exchange rates work in your favor.
+                dedicated account numbers and IBANs provided through our
+                banking partners, then convert instantly whenever exchange
+                rates work in your favor.
               </p>
               <ul className="mt-6 space-y-3 text-sm text-muted">
                 <li className="flex gap-3">
-                  <span className="text-gold">✓</span> Local IBANs for US, EU, UK, and more
+                  <span className="text-gold">✓</span> Local IBANs for US, EU, UK, and more via banking partners
                 </li>
                 <li className="flex gap-3">
                   <span className="text-gold">✓</span> Instant conversion between any supported pair
@@ -354,7 +355,7 @@ export default function FeaturesPage() {
           <SectionHeading
             eyebrow="Why ZorianPay"
             title="See how ZorianPay compares"
-            description="Traditional banking wasn't built for a world that moves money across currencies and chains every day. ZorianPay was."
+            description="Traditional banking infrastructure wasn't built for a world that moves money across currencies and chains every day. ZorianPay was."
           />
           <div className="mt-16 overflow-hidden rounded-2xl border border-border">
             <table className="w-full text-left text-sm">

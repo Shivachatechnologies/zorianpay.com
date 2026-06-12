@@ -246,7 +246,7 @@ export default function SecurityPage() {
           <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-background px-8 py-16 text-center sm:px-16">
             <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(240,185,11,0.15),transparent_60%)]" />
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Bank with confidence
+              Manage your money with confidence
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
               Have questions about our security practices, compliance program,

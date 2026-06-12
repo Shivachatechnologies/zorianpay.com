@@ -31,9 +31,10 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Logo />
             <p className="mt-4 max-w-sm text-sm leading-6 text-muted">
-              ZorianPay is a next-generation neobanking platform offering
-              multi-currency accounts, blockchain-powered payments, and
-              crypto card issuance for individuals and businesses worldwide.
+              ZorianPay is a next-generation crypto card and multi-currency
+              wallet platform offering multi-currency wallets,
+              blockchain-powered payments, and crypto card issuance for
+              individuals and businesses worldwide.
             </p>
             <p className="mt-6 text-sm text-muted">
               Operated by{" "}
@@ -67,12 +68,15 @@ export function Footer() {
         <div className="mt-14 border-t border-border pt-8">
           <p className="text-xs leading-6 text-muted">
             ZorianPay is a brand operated by Shivacha Technologies LLC.
-            Digital asset and crypto-linked card products carry risk, and
-            values may fluctuate. Multi-currency account and crypto services
-            may not be available in all regions and are subject to local
-            regulations and ongoing licensing arrangements with regulated
-            banking and payment partners. Cryptocurrency products are not
-            covered by deposit insurance schemes.
+            ZorianPay is not a bank, and accounts are not bank deposit
+            accounts. ZorianPay provides crypto-linked card issuance and
+            multi-currency wallet services. Digital asset and crypto-linked
+            card products carry risk, and values may fluctuate.
+            Multi-currency account and crypto services may not be available
+            in all regions and are subject to local regulations and ongoing
+            arrangements with regulated banking and payment partners.
+            Cryptocurrency products are not covered by deposit insurance
+            schemes.
           </p>
           <div className="mt-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <p className="text-sm text-muted">

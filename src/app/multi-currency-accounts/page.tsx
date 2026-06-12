@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Container, Section, SectionHeading, Eyebrow, Button, Card } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Multi-Currency Accounts",
+  title: "Multi-Currency Wallets",
   description:
-    "Hold, send, and convert between 30+ fiat and crypto currencies in a single ZorianPay account, with local IBANs for major regions and instant conversion.",
+    "Hold, send, and convert between 30+ fiat and crypto currencies in a single ZorianPay wallet, with local account details for major regions via banking partners and instant conversion.",
 };
 
 const currencies = [
@@ -111,19 +111,19 @@ export default function MultiCurrencyAccountsPage() {
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <div className="flex justify-center">
-              <Eyebrow>Multi-Currency Accounts</Eyebrow>
+              <Eyebrow>Multi-Currency Wallets</Eyebrow>
             </div>
             <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              One account, <span className="gold-gradient-text">30+ currencies</span>, zero borders
+              One wallet, <span className="gold-gradient-text">30+ currencies</span>, zero borders
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted">
-              Hold fiat and crypto side by side in a single ZorianPay account.
-              Get local account details for major regions, convert instantly
-              between currencies, and manage every balance from one
-              dashboard.
+              Hold fiat and crypto side by side in a single ZorianPay wallet.
+              Get local account details for major regions via our banking
+              partners, convert instantly between currencies, and manage
+              every balance from one dashboard.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact">Open a Multi-Currency Account</Button>
+              <Button href="/contact">Open a Multi-Currency Wallet</Button>
               <Button href="/features" variant="secondary">
                 Explore All Features
               </Button>
@@ -138,7 +138,7 @@ export default function MultiCurrencyAccountsPage() {
           <SectionHeading
             eyebrow="Supported Currencies"
             title="Fiat and crypto, all in one place"
-            description="From major world currencies to leading digital assets, ZorianPay accounts support the money you actually use."
+            description="From major world currencies to leading digital assets, ZorianPay wallets support the money you actually use."
           />
           <div className="mt-16 grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-6">
             {currencies.map((currency) => (
@@ -222,7 +222,7 @@ export default function MultiCurrencyAccountsPage() {
           <SectionHeading
             eyebrow="Local Account Details"
             title="Get paid like a local, wherever you operate"
-            description="ZorianPay issues local account numbers and IBANs for major regions, so clients and partners can pay you through familiar domestic payment rails."
+            description="Through our banking partners, ZorianPay provides local account numbers and IBANs for major regions, so clients and partners can pay you through familiar domestic payment rails."
           />
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {regions.map((region) => (
@@ -242,7 +242,7 @@ export default function MultiCurrencyAccountsPage() {
           <SectionHeading
             eyebrow="Use Cases"
             title="Built for the way modern money moves"
-            description="Whether you're earning, traveling, running a business, or supporting family abroad, ZorianPay accounts adapt to your needs."
+            description="Whether you're earning, traveling, running a business, or supporting family abroad, ZorianPay wallets adapt to your needs."
           />
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {useCases.map((useCase) => (
@@ -262,14 +262,14 @@ export default function MultiCurrencyAccountsPage() {
           <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-background px-8 py-16 text-center sm:px-16">
             <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(240,185,11,0.15),transparent_60%)]" />
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Hold the world&apos;s money in one account
+              Hold the world&apos;s money in one wallet
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-              Open a ZorianPay multi-currency account and start receiving,
+              Open a ZorianPay multi-currency wallet and start receiving,
               converting, and spending across 30+ currencies today.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact">Open an Account</Button>
+              <Button href="/contact">Open a Wallet</Button>
               <Button href="/crypto-card" variant="secondary">
                 Explore the Crypto Card
               </Button>

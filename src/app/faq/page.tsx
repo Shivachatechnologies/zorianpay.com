@@ -15,7 +15,7 @@ const categories = [
       {
         question: "What is ZorianPay?",
         answer:
-          "ZorianPay is a blockchain-powered neobanking platform operated by Shivacha Technologies LLC. It combines multi-currency accounts, crypto card issuance, and blockchain-based settlement so individuals and businesses can hold, send, and spend money globally from a single account.",
+          "ZorianPay is a blockchain-powered crypto card and multi-currency wallet platform operated by Shivacha Technologies LLC. It combines multi-currency wallets, crypto card issuance, and blockchain-based settlement so individuals and businesses can hold, send, and spend money globally from a single account.",
       },
       {
         question: "How do I open a ZorianPay account?",
@@ -45,7 +45,7 @@ const categories = [
       {
         question: "Can I receive local bank transfers in different currencies?",
         answer:
-          "Yes. Each multi-currency sub-account comes with local account details (such as an IBAN or local routing details depending on the currency) so you can receive payments like a local in that region.",
+          "Yes. Each multi-currency sub-account can come with local account details (such as an IBAN or local routing details depending on the currency), provided via our banking partners, so you can receive payments like a local in that region.",
       },
       {
         question: "How do currency conversions work?",
