@@ -52,8 +52,6 @@ const tiers = [
   {
     name: "Standard",
     tagline: "Get started for free",
-    price: "$0",
-    cadence: "annual fee",
     highlight: false,
     features: [
       "Instant virtual card issuance",
@@ -66,8 +64,6 @@ const tiers = [
   {
     name: "Plus",
     tagline: "For everyday spenders",
-    price: "$9",
-    cadence: "/month",
     highlight: true,
     features: [
       "Everything in Standard",
@@ -81,8 +77,6 @@ const tiers = [
   {
     name: "Black",
     tagline: "Metal card, premium perks",
-    price: "$29",
-    cadence: "/month",
     highlight: false,
     features: [
       "Everything in Plus",
@@ -433,10 +427,6 @@ export default function CryptoCardPage() {
                   {tier.highlight && <Pill><Sparkles className="h-3 w-3 text-gold" /> Most Popular</Pill>}
                   <h3 className="mt-4 text-xl font-bold text-foreground">{tier.name}</h3>
                   <p className="mt-1 text-sm text-muted">{tier.tagline}</p>
-                  <p className="mt-4">
-                    <span className="text-3xl font-bold gold-gradient-text">{tier.price}</span>
-                    <span className="ml-1 text-sm text-muted">{tier.cadence}</span>
-                  </p>
                   <ul className="mt-6 space-y-3 text-sm text-muted">
                     {tier.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-3">
