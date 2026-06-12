@@ -52,7 +52,7 @@ export function Header() {
           >
             Log In
           </a>
-          <Button href="/contact">Open an Account</Button>
+          <Button href="https://app.zorianpay.com/register">Open an Account</Button>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
@@ -101,7 +101,7 @@ export function Header() {
               >
                 Log In
               </a>
-              <Button href="/contact" className="w-full">
+              <Button href="https://app.zorianpay.com/register" className="w-full">
                 Open an Account
               </Button>
             </div>

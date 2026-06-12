@@ -153,7 +153,7 @@ export default function Home() {
               </Reveal>
               <Reveal delay={240}>
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                  <Button href="/contact">
+                  <Button href="https://app.zorianpay.com/register">
                     Open a ZorianPay Account
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Button>
@@ -375,7 +375,7 @@ export default function Home() {
                 blockchain.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button href="/contact">
+                <Button href="https://app.zorianpay.com/register">
                   Open an Account
                   <ArrowRight className="h-4 w-4" />
                 </Button>

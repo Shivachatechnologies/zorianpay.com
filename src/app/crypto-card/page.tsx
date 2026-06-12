@@ -182,7 +182,7 @@ export default function CryptoCardPage() {
               </Reveal>
               <Reveal delay={240}>
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                  <Button href="/contact">
+                  <Button href="https://app.zorianpay.com/register">
                     Order Your Card
                     <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -251,7 +251,7 @@ export default function CryptoCardPage() {
                   ))}
                 </ul>
                 <div className="mt-8">
-                  <Button href="/contact" className="w-full">
+                  <Button href="https://app.zorianpay.com/register" className="w-full">
                     Get Your Virtual Card
                     <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -300,7 +300,7 @@ export default function CryptoCardPage() {
                   ))}
                 </ul>
                 <div className="mt-8">
-                  <Button href="/contact" className="w-full">
+                  <Button href="https://app.zorianpay.com/register" className="w-full">
                     Order Your Physical Card
                     <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -533,7 +533,7 @@ export default function CryptoCardPage() {
                   Learn About Our Security
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="/contact" variant="secondary">
+                <Button href="https://app.zorianpay.com/register" variant="secondary">
                   Order Your Card
                 </Button>
               </div>
