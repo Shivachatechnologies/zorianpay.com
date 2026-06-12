@@ -46,9 +46,12 @@ export function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
-          <Button href="/contact" variant="secondary">
-            Get in Touch
-          </Button>
+          <a
+            href="https://app.zorianpay.com"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-border-strong bg-surface px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold"
+          >
+            Log In
+          </a>
           <Button href="/contact">Open an Account</Button>
         </div>
 
@@ -92,9 +95,12 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-2 flex flex-col gap-3">
-              <Button href="/contact" variant="secondary" className="w-full">
-                Get in Touch
-              </Button>
+              <a
+                href="https://app.zorianpay.com"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border-strong bg-surface px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-gold/50 hover:text-gold"
+              >
+                Log In
+              </a>
               <Button href="/contact" className="w-full">
                 Open an Account
               </Button>
