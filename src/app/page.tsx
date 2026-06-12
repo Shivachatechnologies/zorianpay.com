@@ -162,12 +162,6 @@ export default function Home() {
                   </Button>
                 </div>
               </Reveal>
-              <Reveal delay={320}>
-                <p className="mt-6 text-sm text-muted">
-                  A product of{" "}
-                  <span className="text-foreground">Shivacha Technologies LLC</span>
-                </p>
-              </Reveal>
             </div>
             <Reveal delay={160} className="flex justify-center lg:justify-end">
               <div className="relative">
