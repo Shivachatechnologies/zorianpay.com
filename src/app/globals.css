@@ -16,18 +16,18 @@
 }
 
 html.light {
-  --background: #fbfaf7;
-  --background-2: #f4f2ec;
+  --background: #ffffff;
+  --background-2: #fafafb;
   --surface: #ffffff;
-  --surface-2: #f6f4ee;
-  --foreground: #15151c;
-  --muted: #5b5b6b;
-  --muted-2: #8a8a99;
-  --gold: #c8930a;
-  --gold-light: #e3aa0a;
-  --gold-dark: #9a7108;
-  --border: #e6e2d8;
-  --border-strong: #d8d3c5;
+  --surface-2: #f7f8fa;
+  --foreground: #0e0f14;
+  --muted: #51525e;
+  --muted-2: #878896;
+  --gold: #b8860b;
+  --gold-light: #d49a0a;
+  --gold-dark: #8f6a06;
+  --border: #e8e9ee;
+  --border-strong: #d9dbe3;
 }
 
 @theme inline {
@@ -120,11 +120,22 @@ html.light .mesh-bg {
 }
 
 html.light .glow-gold {
-  box-shadow: 0 24px 60px -20px rgba(120, 90, 10, 0.35);
+  box-shadow: 0 24px 60px -20px rgba(120, 90, 10, 0.3);
 }
 
 html.light body::before {
-  opacity: 0.015;
+  display: none;
+}
+
+html.light .card-surface {
+  background: var(--surface);
+  box-shadow:
+    0 1px 2px rgba(14, 15, 20, 0.04),
+    0 8px 24px -12px rgba(14, 15, 20, 0.08);
+}
+
+html.light .card-surface:hover::after {
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.04) 0%, rgba(184, 134, 11, 0) 60%);
 }
 
 .section-divider {
