@@ -15,6 +15,21 @@
   --border-strong: #2a2c38;
 }
 
+html.light {
+  --background: #fbfaf7;
+  --background-2: #f4f2ec;
+  --surface: #ffffff;
+  --surface-2: #f6f4ee;
+  --foreground: #15151c;
+  --muted: #5b5b6b;
+  --muted-2: #8a8a99;
+  --gold: #c8930a;
+  --gold-light: #e3aa0a;
+  --gold-dark: #9a7108;
+  --border: #e6e2d8;
+  --border-strong: #d8d3c5;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-background-2: var(--background-2);
@@ -96,6 +111,20 @@ body::before {
   background-image:
     radial-gradient(ellipse 80% 50% at 80% -10%, rgba(240, 185, 11, 0.16), transparent 60%),
     radial-gradient(ellipse 60% 50% at 10% 10%, rgba(240, 185, 11, 0.07), transparent 55%);
+}
+
+html.light .mesh-bg {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 80% -10%, rgba(200, 147, 10, 0.14), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 10%, rgba(200, 147, 10, 0.06), transparent 55%);
+}
+
+html.light .glow-gold {
+  box-shadow: 0 24px 60px -20px rgba(120, 90, 10, 0.35);
+}
+
+html.light body::before {
+  opacity: 0.015;
 }
 
 .section-divider {

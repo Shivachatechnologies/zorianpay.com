@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
 import { Container, Button } from "./ui";
 
 const navLinks = [
@@ -45,33 +46,37 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <ThemeToggle />
           <Button href="/contact" variant="secondary">
             Get in Touch
           </Button>
           <Button href="/contact">Open an Account</Button>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle navigation menu"
-          aria-expanded={open}
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground lg:hidden"
-        >
-          <svg
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={open}
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground"
           >
-            {open ? (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
+            <svg
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              {open ? (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </Container>
 
       {open && (
