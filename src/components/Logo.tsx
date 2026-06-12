@@ -1,53 +1,71 @@
-import Link from "next/link";
+"use client";
 
-export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 64 64"
-      className={className}
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <linearGradient id="zp-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#ffd862" />
-          <stop offset="50%" stopColor="#f0b90b" />
-          <stop offset="100%" stopColor="#b8860b" />
-        </linearGradient>
-      </defs>
-      <circle cx="32" cy="32" r="31" fill="url(#zp-gold)" />
-      <circle
-        cx="32"
-        cy="32"
-        r="25"
-        fill="none"
-        stroke="#07070b"
-        strokeOpacity="0.25"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M21 19h22l-15 26h15"
-        fill="none"
-        stroke="#07070b"
-        strokeWidth="6"
-        strokeLinecap="square"
-        strokeLinejoin="miter"
-      />
-    </svg>
-  );
+import Link from "next/link";
+import Image from "next/image";
+import { useSyncExternalStore } from "react";
+
+// ✅ Dark background ke liye (white text wala)
+import logoDark from "../app/zorianlogo.png";
+
+// ✅ Light background ke liye (dark text wala) - designer se lena
+import logoLight from "../app/zorianlogo-light.png";
+
+function subscribe(callback: () => void) {
+  const observer = new MutationObserver(callback);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+  return () => observer.disconnect();
+}
+
+function getSnapshot() {
+  return document.documentElement.classList.contains("light");
+}
+
+function getServerSnapshot() {
+  return false;
 }
 
 export function Logo({ className = "" }: { className?: string }) {
+  const isLight = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot
+  );
+
   return (
     <Link
       href="/"
-      className={`flex items-center gap-2.5 ${className}`}
+      className={`flex items-center ${className}`}
       aria-label="ZorianPay home"
     >
-      <LogoMark className="h-9 w-9 shrink-0" />
-      <span className="text-xl font-bold tracking-tight text-foreground">
-        Zorian<span className="gold-gradient-text">Pay</span>
-      </span>
+      <Image
+        src={isLight ? logoLight : logoDark}  // ✅ Theme ke hisab se switch
+        alt="ZorianPay"
+        width={220}
+        height={80}
+        priority
+        className="object-contain transition-all duration-300"
+      />
     </Link>
+  );
+}
+
+export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
+  const isLight = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot
+  );
+
+  return (
+    <Image
+      src={isLight ? logoLight : logoDark}
+      alt="ZorianPay Logo"
+      width={36}
+      height={36}
+      className={className}
+    />
   );
 }
