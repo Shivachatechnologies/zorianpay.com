@@ -1,0 +1,359 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Container, Section, SectionHeading, Eyebrow, Button, Card } from "@/components/ui";
+import { CardVisual } from "@/components/CardVisual";
+
+export const metadata: Metadata = {
+  title: "Crypto Card",
+  description:
+    "The ZorianPay Crypto Card: virtual and physical Visa cards that spend directly from your crypto and fiat balances, with real-time conversion, cashback, and full spending controls.",
+};
+
+const supportedAssets = [
+  { code: "BTC", name: "Bitcoin" },
+  { code: "ETH", name: "Ethereum" },
+  { code: "USDT", name: "Tether" },
+  { code: "USDC", name: "USD Coin" },
+  { code: "BNB", name: "BNB" },
+  { code: "SOL", name: "Solana" },
+  { code: "MATIC", name: "Polygon" },
+  { code: "TRX", name: "Tron" },
+];
+
+const tiers = [
+  {
+    name: "Standard",
+    tagline: "Get started for free",
+    price: "$0",
+    cadence: "annual fee",
+    highlight: false,
+    features: [
+      "Instant virtual card issuance",
+      "Real-time crypto-to-fiat conversion",
+      "Up to 0.5% cashback on purchases",
+      "Standard ATM withdrawal limits",
+      "In-app freeze/unfreeze controls",
+    ],
+  },
+  {
+    name: "Plus",
+    tagline: "For everyday spenders",
+    price: "$9",
+    cadence: "/month",
+    highlight: true,
+    features: [
+      "Everything in Standard",
+      "Physical Visa card included",
+      "Up to 1.5% cashback on purchases",
+      "Higher ATM withdrawal limits",
+      "Priority customer support",
+      "Reduced FX conversion spreads",
+    ],
+  },
+  {
+    name: "Black",
+    tagline: "Metal card, premium perks",
+    price: "$29",
+    cadence: "/month",
+    highlight: false,
+    features: [
+      "Everything in Plus",
+      "Premium metal card design",
+      "Up to 3% cashback on purchases",
+      "Highest ATM withdrawal limits",
+      "Airport lounge access program",
+      "Dedicated account manager",
+    ],
+  },
+];
+
+const controls = [
+  {
+    icon: "🧊",
+    title: "Freeze & unfreeze instantly",
+    description:
+      "Lock your card from the app the moment it's lost or misplaced, and unlock it just as quickly when it turns up.",
+  },
+  {
+    icon: "📊",
+    title: "Custom spending limits",
+    description:
+      "Set daily, weekly, or per-transaction limits across categories like online purchases, ATM withdrawals, and in-store payments.",
+  },
+  {
+    icon: "🏧",
+    title: "Global ATM access",
+    description:
+      "Withdraw local currency from ATMs worldwide, with transparent conversion from your crypto or fiat balances.",
+  },
+  {
+    icon: "🔔",
+    title: "Real-time alerts",
+    description:
+      "Get instant push notifications for every authorization, decline, and refund so you always know where your money is.",
+  },
+  {
+    icon: "🌍",
+    title: "Geo & merchant controls",
+    description:
+      "Restrict your card to specific countries or merchant categories to reduce exposure to unauthorized use.",
+  },
+  {
+    icon: "🔁",
+    title: "Auto top-up rules",
+    description:
+      "Configure automatic conversions from your crypto holdings so your spending balance never runs dry.",
+  },
+];
+
+const orderSteps = [
+  {
+    step: "01",
+    title: "Verify your account",
+    description:
+      "Complete identity verification in the ZorianPay app — most users are approved within minutes.",
+  },
+  {
+    step: "02",
+    title: "Choose your card",
+    description:
+      "Pick Standard, Plus, or Black, and issue a virtual card instantly while your physical card ships.",
+  },
+  {
+    step: "03",
+    title: "Fund your balance",
+    description:
+      "Top up from any supported crypto or fiat balance, or set up auto top-up from your wallet.",
+  },
+  {
+    step: "04",
+    title: "Start spending",
+    description:
+      "Use your virtual card immediately for online purchases, and tap to pay once your physical card arrives.",
+  },
+];
+
+export default function CryptoCardPage() {
+  return (
+    <>
+      {/* Hero */}
+      <Section className="relative overflow-hidden pt-16 sm:pt-24">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_20%,rgba(240,185,11,0.12),transparent_55%)]" />
+        <Container>
+          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+            <div>
+              <Eyebrow>ZorianPay Crypto Card</Eyebrow>
+              <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                Spend crypto <span className="gold-gradient-text">anywhere Visa is accepted</span>
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
+                The ZorianPay Crypto Card converts BTC, ETH, USDT, USDC and
+                more into local currency in real time — at checkout, online,
+                or at the ATM. Issue a virtual card instantly, or order a
+                physical card delivered worldwide.
+              </p>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <Button href="/contact">Order Your Card</Button>
+                <Button href="/pricing" variant="secondary">
+                  View Card Fees
+                </Button>
+              </div>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <CardVisual className="glow-gold" />
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Virtual + physical issuance */}
+      <Section className="border-t border-border bg-surface">
+        <Container>
+          <SectionHeading
+            eyebrow="Issuance"
+            title="Virtual in minutes. Physical wherever you are."
+            description="Start spending before your physical card even ships — every ZorianPay account can issue a virtual card instantly."
+          />
+          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <Card>
+              <div className="text-3xl">📲</div>
+              <h3 className="mt-4 text-lg font-semibold text-foreground">Virtual Card</h3>
+              <p className="mt-2 text-sm leading-6 text-muted">
+                Issued instantly inside the ZorianPay app. Add it to your
+                mobile wallet for tap-to-pay, or use it directly for online
+                purchases and subscriptions.
+              </p>
+            </Card>
+            <Card>
+              <div className="text-3xl">📬</div>
+              <h3 className="mt-4 text-lg font-semibold text-foreground">Physical Card</h3>
+              <p className="mt-2 text-sm leading-6 text-muted">
+                A Visa-network card shipped worldwide, ready for in-store
+                payments and ATM withdrawals. Activate it in seconds from the
+                app on arrival.
+              </p>
+            </Card>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Real-time conversion + supported assets */}
+      <Section>
+        <Container>
+          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+            <div>
+              <Eyebrow>Real-Time Conversion</Eyebrow>
+              <h2 className="mt-5 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Pay in crypto, settle in local currency
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-muted">
+                When you tap your ZorianPay card, your selected crypto balance
+                is converted to the merchant&apos;s local currency at the
+                prevailing market rate — instantly and transparently, with no
+                hidden markups.
+              </p>
+              <p className="mt-4 text-lg leading-8 text-muted">
+                Choose which balance funds your card by default, or let
+                ZorianPay automatically draw from your fiat balance first and
+                fall back to crypto when needed.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-foreground">Supported cryptocurrencies</h3>
+              <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {supportedAssets.map((asset) => (
+                  <div
+                    key={asset.code}
+                    className="card-surface flex flex-col items-center justify-center rounded-xl py-5 text-center"
+                  >
+                    <span className="text-sm font-bold tracking-wide text-gold">{asset.code}</span>
+                    <span className="mt-1 text-xs text-muted">{asset.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Tiers */}
+      <Section className="border-t border-border bg-surface">
+        <Container>
+          <SectionHeading
+            eyebrow="Card Tiers"
+            title="A card for every kind of spender"
+            description="Start free with Standard, or unlock higher cashback, premium materials, and elevated limits with Plus and Black."
+          />
+          <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {tiers.map((tier) => (
+              <Card
+                key={tier.name}
+                className={tier.highlight ? "border-gold/50 ring-1 ring-gold/30" : ""}
+              >
+                {tier.highlight && (
+                  <span className="inline-flex items-center rounded-full gold-gradient-bg px-3 py-1 text-xs font-semibold text-black">
+                    Most Popular
+                  </span>
+                )}
+                <h3 className="mt-4 text-xl font-bold text-foreground">{tier.name}</h3>
+                <p className="mt-1 text-sm text-muted">{tier.tagline}</p>
+                <p className="mt-4">
+                  <span className="text-3xl font-bold gold-gradient-text">{tier.price}</span>
+                  <span className="ml-1 text-sm text-muted">{tier.cadence}</span>
+                </p>
+                <ul className="mt-6 space-y-3 text-sm text-muted">
+                  {tier.features.map((feature) => (
+                    <li key={feature} className="flex gap-3">
+                      <span className="text-gold">✓</span> {feature}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8">
+                  <Button
+                    href="/contact"
+                    variant={tier.highlight ? "primary" : "secondary"}
+                    className="w-full"
+                  >
+                    Choose {tier.name}
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-sm text-muted">
+            See the full breakdown of card fees, FX spreads, and ATM costs on
+            our{" "}
+            <Link href="/pricing" className="text-gold hover:underline">
+              pricing page
+            </Link>
+            .
+          </p>
+        </Container>
+      </Section>
+
+      {/* Spending controls */}
+      <Section>
+        <Container>
+          <SectionHeading
+            eyebrow="Spending Controls"
+            title="You're always in control"
+            description="Manage your card entirely from the ZorianPay app — set limits, lock your card, and get alerted in real time."
+          />
+          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {controls.map((control) => (
+              <Card key={control.title}>
+                <div className="text-3xl">{control.icon}</div>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">{control.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{control.description}</p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* How to order */}
+      <Section className="border-t border-border bg-surface">
+        <Container>
+          <SectionHeading
+            eyebrow="Getting Started"
+            title="Order your card in four steps"
+            description="From sign-up to your first tap-to-pay transaction, ZorianPay keeps onboarding fast and simple."
+          />
+          <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-4">
+            {orderSteps.map((item) => (
+              <div key={item.step} className="relative">
+                <span className="text-5xl font-bold text-border">{item.step}</span>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Security */}
+      <Section>
+        <Container>
+          <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-surface px-8 py-16 text-center sm:px-16">
+            <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(240,185,11,0.15),transparent_60%)]" />
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Backed by bank-grade security
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
+              Every ZorianPay card is protected by encrypted transaction data,
+              biometric app authentication, two-factor authorization, and
+              continuous fraud monitoring. Crypto backing your card balance is
+              held in audited cold-storage custody.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button href="/security">Learn About Our Security</Button>
+              <Button href="/contact" variant="secondary">
+                Order Your Card
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </>
+  );
+}

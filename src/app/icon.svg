@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="zp-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd862" />
+      <stop offset="50%" stop-color="#f0b90b" />
+      <stop offset="100%" stop-color="#b8860b" />
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="url(#zp-gold)" />
+  <circle cx="32" cy="32" r="25" fill="none" stroke="#07070b" stroke-opacity="0.25" stroke-width="1.5" />
+  <path d="M21 19h22l-15 26h15" fill="none" stroke="#07070b" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter" />
+</svg>
