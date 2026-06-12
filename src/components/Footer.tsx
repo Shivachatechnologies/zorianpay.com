@@ -1,12 +1,20 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { Container } from "./ui";
-import { AtSign, Briefcase, Send } from "lucide-react";
+import {
+  XIcon,
+  LinkedInIcon,
+  TelegramIcon,
+  InstagramIcon,
+  YouTubeIcon,
+} from "./SocialIcons";
 
 const socials = [
-  { label: "Twitter / X", icon: AtSign },
-  { label: "LinkedIn", icon: Briefcase },
-  { label: "Telegram", icon: Send },
+  { label: "X (Twitter)", href: "https://x.com/zorianpay", icon: XIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/zorianpay", icon: LinkedInIcon },
+  { label: "Telegram", href: "https://t.me/zorianpay", icon: TelegramIcon },
+  { label: "Instagram", href: "https://www.instagram.com/zorianpay", icon: InstagramIcon },
+  { label: "YouTube", href: "https://www.youtube.com/@zorianpay", icon: YouTubeIcon },
 ];
 
 const footerLinks = {
@@ -92,13 +100,17 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               {socials.map((social) => (
-                <span
+                <a
                   key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-gold/40 hover:text-gold"
+                  title={social.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold hover:shadow-[0_0_20px_-6px_rgba(240,185,11,0.5)]"
                 >
                   <social.icon className="h-4 w-4" />
-                </span>
+                </a>
               ))}
             </div>
           </div>
