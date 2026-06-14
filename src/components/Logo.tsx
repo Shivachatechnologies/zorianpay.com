@@ -10,6 +10,9 @@ import logoDark from "../app/zorianlogo.png";
 // ✅ Light background ke liye (dark text wala) - designer se lena
 import logoLight from "../app/zorianlogo-light.png";
 
+// Coin-only icon mark (cropped from the logo, transparent background)
+import logoIcon from "../app/logo-icon.png";
+
 function subscribe(callback: () => void) {
   const observer = new MutationObserver(callback);
   observer.observe(document.documentElement, {
@@ -53,19 +56,13 @@ export function Logo({ className = "" }: { className?: string }) {
 }
 
 export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
-  const isLight = useSyncExternalStore(
-    subscribe,
-    getSnapshot,
-    getServerSnapshot
-  );
-
   return (
     <Image
-      src={isLight ? logoLight : logoDark}
-      alt="ZorianPay Logo"
-      width={36}
-      height={36}
-      className={className}
+      src={logoIcon}
+      alt="ZorianPay"
+      width={256}
+      height={256}
+      className={`object-contain ${className}`}
     />
   );
 }
