@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { Container, Section, Eyebrow, Card, IconBadge } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
-import { Headset, Building2, Newspaper, Clock } from "lucide-react";
+import { Headset, Building2, Newspaper, Clock, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with ZorianPay and Shivacha Technologies LLC for support, business inquiries, or general questions about our multi-currency accounts and crypto card.",
+    "Get in touch with ZorianPay and Shivacha Technologies LLC for merchant onboarding, enterprise API access, banking partnerships, or general support questions.",
 };
 
 const contactCards = [
@@ -20,19 +20,19 @@ const contactCards = [
     icon: Headset,
   },
   {
-    title: "Business Inquiries",
+    title: "Merchants & Enterprises",
     description:
-      "Interested in a Business account, partnerships, or API access? Reach out to our business team.",
+      "Interested in accepting digital asset payments, a Business Account, enterprise API access, or a banking partnership? Reach out to our team.",
     detail: "business@zorianpay.com",
     href: "mailto:business@zorianpay.com",
     icon: Building2,
   },
   {
-    title: "Press & Media",
+    title: "Executive & Press",
     description:
-      "For press inquiries, interviews, or media kits regarding ZorianPay or Shivacha Technologies LLC.",
-    detail: "press@zorianpay.com",
-    href: "mailto:press@zorianpay.com",
+      "For press inquiries, media kits, or executive-level partnership discussions regarding ZorianPay or Shivacha Technologies LLC.",
+    detail: "ceo@zorianpay.com",
+    href: "mailto:ceo@zorianpay.com",
     icon: Newspaper,
   },
 ];
@@ -55,9 +55,10 @@ export default function ContactPage() {
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-6 text-lg leading-8 text-muted">
-                Whether you have a question about opening an account, need help
-                with your crypto card, or want to explore a Business
-                partnership, our team is ready to help.
+                Whether you&apos;re a merchant looking to accept digital asset
+                payments, an enterprise exploring API integration, a bank or
+                payment provider interested in a partnership, or you need
+                help with your account or card, our team is ready to help.
               </p>
             </Reveal>
           </div>
@@ -136,11 +137,15 @@ export default function ContactPage() {
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted">
                 ZorianPay is a product of Shivacha Technologies LLC, a
-                registered fintech company building borderless financial
-                infrastructure for the digital economy. All ZorianPay accounts,
-                cards, and services are provided in partnership with regulated
-                banking and custody partners.
+                registered fintech company building the financial
+                infrastructure for the digital asset economy. All ZorianPay
+                accounts, cards, and settlement services are provided in
+                partnership with regulated banking and custody partners.
               </p>
+              <div className="mx-auto mt-6 flex max-w-2xl items-center justify-center gap-2 text-sm text-muted">
+                <MapPin className="h-4 w-4 text-gold" />
+                8 The Green, Suite B, Dover, DE 19901, USA
+              </div>
             </div>
           </Reveal>
         </Container>

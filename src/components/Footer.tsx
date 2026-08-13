@@ -18,11 +18,11 @@ const socials = [
 ];
 
 const footerLinks = {
-  Product: [
-    { href: "/features", label: "Features" },
-    { href: "/crypto-card", label: "Crypto Card" },
-    { href: "/multi-currency-accounts", label: "Multi-Currency Accounts" },
-    { href: "/security", label: "Security" },
+  Platform: [
+    { href: "/features", label: "Platform Overview" },
+    { href: "/multi-currency-accounts", label: "Settlement & Accounts" },
+    { href: "/crypto-card", label: "Card Programs" },
+    { href: "/security", label: "Security & Compliance" },
   ],
   Company: [
     { href: "/about", label: "About Us" },
@@ -45,16 +45,20 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Logo />
             <p className="mt-4 max-w-sm text-sm leading-6 text-muted">
-              ZorianPay is a next-generation crypto card and multi-currency
-              wallet platform offering multi-currency wallets,
-              blockchain-powered payments, and crypto card issuance for
-              individuals and businesses worldwide.
+              ZorianPay is building the financial infrastructure for the
+              digital asset economy — connecting merchants, enterprises,
+              banks, and digital assets through a secure, API-first platform
+              with local currency settlement, enterprise APIs, and
+              compliance by design.
             </p>
             <p className="mt-6 text-sm text-muted">
               Operated by{" "}
               <span className="font-semibold text-foreground">
                 Shivacha Technologies LLC
               </span>
+            </p>
+            <p className="mt-2 text-sm text-muted">
+              8 The Green, Suite B, Dover, DE 19901, USA
             </p>
           </div>
 
@@ -83,12 +87,14 @@ export function Footer() {
           <p className="text-xs leading-6 text-muted">
             ZorianPay is a brand operated by Shivacha Technologies LLC.
             ZorianPay is not a bank, and accounts are not bank deposit
-            accounts. ZorianPay provides crypto-linked card issuance and
-            multi-currency wallet services. Digital asset and crypto-linked
-            card products carry risk, and values may fluctuate.
-            Multi-currency account and crypto services may not be available
-            in all regions and are subject to local regulations and ongoing
-            arrangements with regulated banking and payment partners.
+            accounts. ZorianPay provides digital asset payment
+            infrastructure, merchant settlement, crypto-linked card
+            issuance, and multi-currency account services. Digital asset and
+            crypto-linked card products carry risk, and values may
+            fluctuate. Merchant settlement, multi-currency account, and
+            digital asset services may not be available in all regions and
+            are subject to local regulations and ongoing arrangements with
+            regulated banking, payment, and compliance partners.
             Cryptocurrency products are not covered by deposit insurance
             schemes.
           </p>

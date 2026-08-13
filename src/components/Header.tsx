@@ -8,10 +8,10 @@ import { ThemeToggle } from "./ThemeToggle";
 import { Container, Button } from "./ui";
 
 const navLinks = [
-  { href: "/features", label: "Features" },
-  { href: "/crypto-card", label: "Crypto Card" },
-  { href: "/multi-currency-accounts", label: "Multi-Currency" },
-  { href: "/security", label: "Security" },
+  { href: "/features", label: "Platform" },
+  { href: "/multi-currency-accounts", label: "Settlement & Accounts" },
+  { href: "/crypto-card", label: "Card Programs" },
+  { href: "/security", label: "Security & Compliance" },
   { href: "/about", label: "Company" },
 ];
 
@@ -52,7 +52,7 @@ export function Header() {
           >
             Log In
           </a>
-          <Button href="https://app.zorianpay.com/register">Open an Account</Button>
+          <Button href="/contact">Talk to Sales</Button>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
@@ -101,8 +101,8 @@ export function Header() {
               >
                 Log In
               </a>
-              <Button href="https://app.zorianpay.com/register" className="w-full">
-                Open an Account
+              <Button href="/contact" className="w-full">
+                Talk to Sales
               </Button>
             </div>
           </Container>

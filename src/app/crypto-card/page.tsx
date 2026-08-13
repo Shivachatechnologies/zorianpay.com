@@ -32,9 +32,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Crypto Card",
+  title: "Card Programs",
   description:
-    "The ZorianPay Crypto Card: virtual and physical Visa cards that spend directly from your crypto and fiat balances, with real-time conversion, cashback, and full spending controls.",
+    "ZorianPay Card Programs: virtual and physical cards backed by the Digital Asset Wallet, spending directly from crypto and fiat balances with real-time conversion — part of the ZorianPay financial infrastructure ecosystem.",
 };
 
 const supportedAssets = [
@@ -165,29 +165,30 @@ export default function CryptoCardPage() {
           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
             <div>
               <Reveal>
-                <Eyebrow>ZorianPay Crypto Card</Eyebrow>
+                <Eyebrow>Card Programs</Eyebrow>
               </Reveal>
               <Reveal delay={80}>
                 <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                  Spend crypto <span className="gold-gradient-text">anywhere Visa is accepted</span>
+                  Spend digital assets <span className="gold-gradient-text">anywhere cards are accepted</span>
                 </h1>
               </Reveal>
               <Reveal delay={160}>
                 <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
-                  The ZorianPay Crypto Card converts BTC, ETH, USDT, USDC and
-                  more into local currency in real time — at checkout, online,
-                  or at the ATM. Issue a virtual card instantly, or order a
+                  Card Programs extend the ZorianPay Digital Asset Wallet into
+                  everyday spending, converting BTC, ETH, USDT, USDC and more
+                  into local currency in real time — at checkout, online, or
+                  at the ATM. Issue a virtual card instantly, or order a
                   physical card delivered worldwide.
                 </p>
               </Reveal>
               <Reveal delay={240}>
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                  <Button href="https://app.zorianpay.com/register">
-                    Order Your Card
+                  <Button href="/contact">
+                    Talk to Sales
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                   <Button href="/features" variant="secondary">
-                    Explore Features
+                    Explore the Platform
                   </Button>
                 </div>
               </Reveal>
@@ -251,7 +252,7 @@ export default function CryptoCardPage() {
                   ))}
                 </ul>
                 <div className="mt-8">
-                  <Button href="https://app.zorianpay.com/register" className="w-full">
+                  <Button href="/contact" className="w-full">
                     Get Your Virtual Card
                     <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -300,7 +301,7 @@ export default function CryptoCardPage() {
                   ))}
                 </ul>
                 <div className="mt-8">
-                  <Button href="https://app.zorianpay.com/register" className="w-full">
+                  <Button href="/contact" className="w-full">
                     Order Your Physical Card
                     <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -533,8 +534,8 @@ export default function CryptoCardPage() {
                   Learn About Our Security
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="https://app.zorianpay.com/register" variant="secondary">
-                  Order Your Card
+                <Button href="/contact" variant="secondary">
+                  Talk to Sales
                 </Button>
               </div>
             </div>
