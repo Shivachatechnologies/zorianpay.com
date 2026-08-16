@@ -9,144 +9,94 @@ import {
   Card,
   IconBadge,
 } from "@/components/ui";
-import { CardVisual } from "@/components/CardVisual";
 import { Reveal } from "@/components/Reveal";
 import {
-  Globe,
-  CreditCard,
-  Link2,
-  Zap,
+  ScanLine,
+  Landmark,
   Building2,
-  TrendingUp,
-  Smartphone,
-  Bell,
-  Users,
-  CheckCircle2,
+  Wallet,
+  Code2,
+  ShieldCheck,
+  LayoutDashboard,
+  Zap,
   Search,
   Coins,
   ArrowRight,
+  ArrowDown,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Features",
+  title: "Platform",
   description:
-    "Explore the full ZorianPay platform: multi-currency wallets, crypto card issuance, blockchain settlements, instant FX, local account details via banking partners, business tools, and more.",
+    "Explore the ZorianPay platform: the Universal Merchant QR, Settlement Engine, Business Accounts, Digital Asset Wallet, Enterprise APIs, Compliance Engine, and Merchant Dashboard — one unified financial infrastructure.",
 };
 
-const platformFeatures = [
+const coreProducts = [
   {
-    icon: Globe,
-    title: "Multi-Currency Accounts",
-    description:
-      "Hold and manage 30+ fiat and crypto currencies in a single account, each with its own balance and transaction history.",
-    href: "/multi-currency-accounts",
-  },
-  {
-    icon: CreditCard,
-    title: "Crypto Card Issuance",
-    description:
-      "Order a virtual card instantly or request a physical Visa card that spends directly from your crypto or fiat balances.",
+    icon: ScanLine,
+    product: "Universal Merchant QR",
+    purpose: "Digital asset payment acceptance",
     href: "/crypto-card",
   },
   {
-    icon: Link2,
-    title: "Blockchain Settlements",
-    description:
-      "Send and receive funds over on-chain rails for transparent, near-instant, and auditable cross-border settlement.",
-    href: "/security",
-  },
-  {
-    icon: Zap,
-    title: "Instant FX Conversion",
-    description:
-      "Convert between currencies at live, transparent rates — no spread surprises, no waiting for settlement windows.",
+    icon: Landmark,
+    product: "Settlement Engine",
+    purpose: "Local currency settlement",
     href: "/multi-currency-accounts",
   },
   {
     icon: Building2,
-    title: "Local Account Details, via Banking Partners",
-    description:
-      "Receive local account numbers and IBANs for major regions, provided through our banking partners, so you can get paid like a local, anywhere you operate.",
+    product: "Business Accounts",
+    purpose: "Business financial operations",
     href: "/multi-currency-accounts",
   },
   {
-    icon: TrendingUp,
-    title: "Savings & Yield Accounts",
-    description:
-      "Put idle balances to work with flexible savings accounts offering competitive yield on select currencies.",
+    icon: Wallet,
+    product: "Digital Asset Wallet",
+    purpose: "Secure asset management",
+    href: "/crypto-card",
+  },
+  {
+    icon: Code2,
+    product: "Enterprise APIs",
+    purpose: "Platform integrations",
     href: "/contact",
   },
   {
-    icon: Smartphone,
-    title: "Mobile-First Experience",
-    description:
-      "Manage accounts, cards, and transfers from a fast, secure mobile app designed for life on the move.",
-    href: "/contact",
-  },
-  {
-    icon: Bell,
-    title: "Smart Notifications & Budgeting",
-    description:
-      "Real-time alerts for every transaction, plus spending insights and budgeting tools to track your money.",
+    icon: ShieldCheck,
+    product: "Compliance Engine",
+    purpose: "Transaction monitoring",
     href: "/security",
   },
   {
-    icon: Users,
-    title: "Team & Multi-User Access",
-    description:
-      "Invite teammates with role-based permissions, approval flows, and shared visibility across business accounts.",
+    icon: LayoutDashboard,
+    product: "Merchant Dashboard",
+    purpose: "Business management",
     href: "/contact",
   },
 ];
 
-const comparisonRows = [
-  {
-    feature: "Multi-currency balances in one account",
-    zorian: true,
-    legacy: false,
-  },
-  {
-    feature: "Crypto + fiat held side by side",
-    zorian: true,
-    legacy: false,
-  },
-  {
-    feature: "On-chain settlement transparency",
-    zorian: true,
-    legacy: false,
-  },
-  {
-    feature: "Instant virtual card issuance",
-    zorian: true,
-    legacy: false,
-  },
-  {
-    feature: "Local IBANs across multiple regions",
-    zorian: true,
-    legacy: "Sometimes",
-  },
-  {
-    feature: "24/7 account access & support",
-    zorian: true,
-    legacy: "Limited hours",
-  },
-  {
-    feature: "Transparent, published FX rates",
-    zorian: true,
-    legacy: "Often hidden markups",
-  },
+const transactionJourney = [
+  "Customer scans the merchant QR",
+  "Customer chooses a digital asset",
+  "Secure authorization",
+  "Smart payment routing",
+  "Compliance verification",
+  "Asset conversion",
+  "Local currency settlement",
+  "Merchant receives funds",
 ];
 
-const businessTools = [
+const enterpriseTools = [
   {
     title: "Developer API & Webhooks",
     description:
-      "Programmatically create accounts, initiate payouts, and reconcile transactions with a clean REST API and real-time webhooks.",
+      "Programmatically create accounts, initiate settlements, and reconcile transactions with a clean REST API and real-time webhooks.",
   },
   {
-    title: "Batch Payouts",
+    title: "Embedded Finance",
     description:
-      "Pay contractors, vendors, or employees across multiple currencies in a single upload — settled on-chain or via local rails.",
+      "Embed digital asset acceptance, wallets, and settlement directly into your own platform or product experience.",
   },
   {
     title: "Multi-User Roles & Approvals",
@@ -156,29 +106,39 @@ const businessTools = [
   {
     title: "Dedicated Account Management",
     description:
-      "Growing businesses get a dedicated relationship manager to help with onboarding, scaling, and treasury strategy.",
+      "Growing merchants and enterprises get a dedicated relationship manager to help with onboarding, scaling, and integration.",
   },
 ];
 
-const blockchainHighlights = [
+const settlementHighlights = [
   {
     icon: Zap,
-    title: "Fast finality",
+    title: "Fast settlement",
     description:
-      "Most on-chain transfers settle in under a minute, regardless of the destination country or banking hours.",
+      "Payments route through smart, compliance-verified rails designed for fast, predictable settlement — regardless of destination country.",
   },
   {
     icon: Search,
     title: "Auditable by design",
     description:
-      "Every settlement has an on-chain reference, giving you a clear, independently verifiable record of funds movement.",
+      "Every transaction moves through compliance verification and routing, giving merchants a clear, verifiable record of funds movement.",
   },
   {
     icon: Coins,
-    title: "Lower transfer costs",
+    title: "Local currency, no wallet management",
     description:
-      "By bypassing layers of correspondent banks, blockchain settlement reduces fees on cross-border payments.",
+      "Merchants receive settlement directly into their existing bank account in local currency — no digital asset wallet to manage.",
   },
+];
+
+const comparisonRows = [
+  { capability: "Payment Gateway", zorian: true },
+  { capability: "Digital Asset Acceptance", zorian: true },
+  { capability: "Merchant Infrastructure", zorian: true },
+  { capability: "Local Currency Settlement", zorian: true },
+  { capability: "Enterprise APIs", zorian: true },
+  { capability: "Banking Connectivity", zorian: true },
+  { capability: "Unified Infrastructure", zorian: true },
 ];
 
 function CheckIcon() {
@@ -220,27 +180,26 @@ export default function FeaturesPage() {
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                One platform for{" "}
-                <span className="gold-gradient-text">global money</span>, built
-                on blockchain
+                One platform for the complete{" "}
+                <span className="gold-gradient-text">digital asset payment journey</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-6 text-balance text-lg leading-8 text-muted">
-                ZorianPay brings multi-currency accounts, crypto card issuance,
-                blockchain settlement, and business-grade tools together in a
-                single, secure experience — so you can hold, move, and spend
-                money however the world works today.
+                ZorianPay is not another payment application or digital
+                wallet. We are building the infrastructure that enables
+                digital assets and traditional financial systems to work
+                together — securely, efficiently, and at global scale.
               </p>
             </Reveal>
             <Reveal delay={240}>
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button href="https://app.zorianpay.com/register">
-                  Open a ZorianPay Account
+                <Button href="/contact">
+                  Talk to Sales
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button href="/crypto-card" variant="secondary">
-                  Discover the Crypto Card
+                  Explore Card Programs
                 </Button>
               </div>
             </Reveal>
@@ -248,31 +207,34 @@ export default function FeaturesPage() {
         </Container>
       </Section>
 
-      {/* Feature grid */}
+      {/* Core products */}
       <Section className="section-divider border-t border-border bg-surface/40">
         <Container>
           <Reveal>
             <SectionHeading
-              eyebrow="Everything included"
-              title="A complete toolkit for borderless finance"
-              description="Every ZorianPay account comes with the same powerful foundation — no matter if you're an individual, a freelancer, or a global business."
+              eyebrow="Core Products"
+              title="Everything connected through one platform"
+              description="Every product in the ZorianPay ecosystem runs on the same unified infrastructure — no separate vendors, no fragmented integrations."
             />
           </Reveal>
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {platformFeatures.map((feature, i) => (
-              <Reveal key={feature.title} delay={i * 60}>
-                <Link href={feature.href}>
-                  <Card className="h-full">
+            {coreProducts.map((item, i) => (
+              <Reveal key={item.product} delay={i * 60}>
+                <Link href={item.href}>
+                  <Card className="relative h-full overflow-hidden">
+                    <span aria-hidden="true" className="numeral-watermark">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     <IconBadge>
-                      <feature.icon className="h-5 w-5" />
+                      <item.icon className="h-5 w-5" />
                     </IconBadge>
-                    <h3 className="mt-4 text-lg font-semibold text-foreground">
-                      {feature.title}
+                    <h3 className="relative mt-4 text-lg font-semibold text-foreground">
+                      {item.product}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted">
-                      {feature.description}
+                    <p className="relative mt-2 text-sm leading-6 text-muted">
+                      {item.purpose}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold">
+                    <span className="relative mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold">
                       Learn more <ArrowRight className="h-3.5 w-3.5" />
                     </span>
                   </Card>
@@ -283,99 +245,52 @@ export default function FeaturesPage() {
         </Container>
       </Section>
 
-      {/* Multi-currency + crypto card spotlight */}
-      <Section className="section-divider border-t border-border">
-        <Container>
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-            <Reveal>
-              <Eyebrow>Multi-Currency Wallets</Eyebrow>
-              <h2 className="mt-5 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Hold 30+ currencies — fiat and crypto — in one wallet
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-muted">
-                Open balances in USD, EUR, GBP, AED, INR, JPY, and dozens more,
-                alongside BTC, ETH, USDT, and USDC. Receive local payments via
-                dedicated account numbers and IBANs provided through our
-                banking partners, then convert instantly whenever exchange
-                rates work in your favor.
-              </p>
-              <ul className="mt-6 space-y-3 text-sm text-muted">
-                {[
-                  "Local IBANs for US, EU, UK, and more via banking partners",
-                  "Instant conversion between any supported pair",
-                  "Crypto and fiat balances side by side",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
-                      <CheckCircle2 className="h-3 w-3" />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8">
-                <Button href="/multi-currency-accounts">
-                  Explore Multi-Currency Accounts
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </div>
-            </Reveal>
-            <Reveal delay={120} className="flex justify-center lg:justify-end">
-              <div className="grid w-full max-w-md grid-cols-3 gap-3">
-                {["USD", "EUR", "GBP", "AED", "INR", "JPY", "SGD", "BTC", "ETH"].map((code) => (
-                  <div
-                    key={code}
-                    className="card-surface flex items-center justify-center rounded-xl py-6 text-sm font-bold tracking-wide text-foreground"
-                  >
-                    {code}
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Crypto card spotlight */}
-      <Section className="section-divider border-t border-border bg-surface/40">
-        <Container>
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-            <Reveal className="order-2 flex justify-center lg:order-1 lg:justify-start">
-              <CardVisual />
-            </Reveal>
-            <Reveal delay={80} className="order-1 lg:order-2">
-              <Eyebrow>Crypto Card</Eyebrow>
-              <h2 className="mt-5 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                A card that spends crypto like cash
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-muted">
-                The ZorianPay Visa card converts your crypto balances to local
-                currency at the point of sale, with full spending controls,
-                ATM access, and rewards tiers for every type of spender.
-              </p>
-              <div className="mt-8">
-                <Button href="/crypto-card">
-                  Discover the Crypto Card
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </div>
-            </Reveal>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Blockchain settlements */}
+      {/* Transaction journey */}
       <Section className="section-divider border-t border-border">
         <Container>
           <Reveal>
             <SectionHeading
-              eyebrow="Blockchain Settlements"
-              title="Transfers that settle on-chain, not on faith"
-              description="Every cross-border transfer can route through blockchain rails, giving you near-instant settlement with a transparent, verifiable trail."
+              eyebrow="Transaction Journey"
+              title="From scan to settlement, in one flow"
+              description="Instead of managing multiple financial relationships, merchants connect once and access a unified infrastructure designed for modern commerce."
+            />
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="mx-auto mt-16 max-w-md">
+              {transactionJourney.map((step, i) => (
+                <div key={step}>
+                  <div className="flex items-center gap-4 rounded-2xl border border-border bg-surface p-4">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/15 text-sm font-bold text-gold">
+                      {i + 1}
+                    </span>
+                    <span className="text-sm font-medium text-foreground">
+                      {step}
+                    </span>
+                  </div>
+                  {i < transactionJourney.length - 1 && (
+                    <div className="flex justify-center py-2 text-muted-2">
+                      <ArrowDown className="h-4 w-4" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </Container>
+      </Section>
+
+      {/* Settlement engine */}
+      <Section className="section-divider border-t border-border bg-surface/40">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              eyebrow="Settlement Engine"
+              title="Settlement that merchants can trust"
+              description="Every transaction routes through compliance verification and smart routing before it settles into a merchant's existing bank account."
             />
           </Reveal>
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {blockchainHighlights.map((item, i) => (
+            {settlementHighlights.map((item, i) => (
               <Reveal key={item.title} delay={i * 60}>
                 <Card className="h-full">
                   <IconBadge>
@@ -390,37 +305,112 @@ export default function FeaturesPage() {
         </Container>
       </Section>
 
-      {/* Business tools */}
-      <Section className="section-divider border-t border-border bg-surface/40">
+      {/* Enterprise tools */}
+      <Section className="section-divider border-t border-border">
         <Container>
           <Reveal>
             <SectionHeading
-              eyebrow="For Businesses"
-              title="Built to scale with your team"
-              description="Business accounts include everything individuals love, plus the controls and integrations growing teams need."
+              eyebrow="For Enterprises"
+              title="Built to scale with your business"
+              description="Enterprise access includes everything merchants rely on, plus the controls and integrations growing teams need."
+              align="left"
             />
           </Reveal>
-          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {businessTools.map((tool, i) => (
-              <Reveal key={tool.title} delay={i * 60}>
-                <Card className="h-full">
-                  <h3 className="text-lg font-semibold text-foreground">{tool.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">{tool.description}</p>
-                </Card>
-              </Reveal>
-            ))}
+          <div className="mt-16 grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
+              {enterpriseTools.map((tool, i) => (
+                <Reveal key={tool.title} delay={i * 60}>
+                  <Card className="h-full">
+                    <h3 className="text-lg font-semibold text-foreground">{tool.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted">{tool.description}</p>
+                  </Card>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal delay={120}>
+              <div className="overflow-hidden rounded-2xl border border-border-strong bg-[#0a0b10] shadow-2xl shadow-black/40">
+                <div className="flex items-center gap-2 border-b border-border-strong bg-surface-2 px-4 py-3">
+                  <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
+                  <span className="ml-3 text-xs font-medium text-white/40">
+                    create-payment.sh
+                  </span>
+                </div>
+                <pre className="overflow-x-auto px-5 py-6 text-[13px] leading-6">
+                  <code className="font-mono">
+                    <span className="text-white/40"># Accept a digital asset payment and settle locally</span>{"\n"}
+                    <span className="text-gold">curl</span>{" "}
+                    <span className="text-white/80">https://api.zorianpay.com/v1/payments</span>{" "}
+                    <span className="text-white/40">\</span>{"\n"}
+                    {"  "}
+                    <span className="text-gold">-H</span>{" "}
+                    <span className="text-emerald-300/80">&quot;Authorization: Bearer sk_live_***&quot;</span>{" "}
+                    <span className="text-white/40">\</span>{"\n"}
+                    {"  "}
+                    <span className="text-gold">-H</span>{" "}
+                    <span className="text-emerald-300/80">&quot;Content-Type: application/json&quot;</span>{" "}
+                    <span className="text-white/40">\</span>{"\n"}
+                    {"  "}
+                    <span className="text-gold">-d</span> <span className="text-white/60">{"'{"}</span>{"\n"}
+                    {"    "}
+                    <span className="text-sky-300/80">&quot;amount&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;250.00&quot;</span>
+                    <span className="text-white/60">,</span>{"\n"}
+                    {"    "}
+                    <span className="text-sky-300/80">&quot;currency&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;USD&quot;</span>
+                    <span className="text-white/60">,</span>{"\n"}
+                    {"    "}
+                    <span className="text-sky-300/80">&quot;asset&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;USDT&quot;</span>
+                    <span className="text-white/60">,</span>{"\n"}
+                    {"    "}
+                    <span className="text-sky-300/80">&quot;settlement&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;local_currency&quot;</span>{"\n"}
+                    <span className="text-white/60">{"  }'"}</span>
+                    {"\n\n"}
+                    <span className="text-white/40"># Response</span>{"\n"}
+                    <span className="text-white/60">{"{"}</span>{"\n"}
+                    {"  "}
+                    <span className="text-sky-300/80">&quot;status&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;settled&quot;</span>
+                    <span className="text-white/60">,</span>{"\n"}
+                    {"  "}
+                    <span className="text-sky-300/80">&quot;settlement_currency&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;USD&quot;</span>
+                    <span className="text-white/60">,</span>{"\n"}
+                    {"  "}
+                    <span className="text-sky-300/80">&quot;amount_settled&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;249.10&quot;</span>{"\n"}
+                    <span className="text-white/60">{"}"}</span>
+                  </code>
+                </pre>
+              </div>
+              <p className="mt-4 text-center text-xs text-muted">
+                Illustrative example — accept a digital asset payment and settle in local currency via the Enterprise API.
+              </p>
+            </Reveal>
           </div>
         </Container>
       </Section>
 
       {/* Comparison */}
-      <Section className="section-divider border-t border-border">
+      <Section className="section-divider border-t border-border bg-surface/40">
         <Container>
           <Reveal>
             <SectionHeading
-              eyebrow="Why ZorianPay"
+              eyebrow="Beyond Traditional FinTech"
               title="See how ZorianPay compares"
-              description="Traditional banking infrastructure wasn't built for a world that moves money across currencies and chains every day. ZorianPay was."
+              description="Traditional providers deliver these capabilities as isolated services. ZorianPay combines them within a single platform."
             />
           </Reveal>
           <Reveal delay={80}>
@@ -428,28 +418,28 @@ export default function FeaturesPage() {
               <table className="w-full text-left text-sm">
                 <thead>
                   <tr className="bg-surface-2">
-                    <th className="px-6 py-4 font-semibold text-foreground">Feature</th>
+                    <th className="px-6 py-4 font-semibold text-foreground">Capability</th>
+                    <th className="px-6 py-4 text-center font-semibold text-muted">Traditional Provider</th>
                     <th className="px-6 py-4 text-center font-semibold text-gold">ZorianPay</th>
-                    <th className="px-6 py-4 text-center font-semibold text-muted">Traditional Bank</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparisonRows.map((row, idx) => (
                     <tr
-                      key={row.feature}
+                      key={row.capability}
                       className={idx % 2 === 0 ? "bg-background" : "bg-surface"}
                     >
                       <td className="border-t border-border px-6 py-4 text-foreground">
-                        {row.feature}
+                        {row.capability}
                       </td>
                       <td className="border-t border-border px-6 py-4 text-center">
                         <span className="inline-flex justify-center">
-                          {row.zorian === true ? <CheckIcon /> : row.zorian}
+                          <CrossIcon />
                         </span>
                       </td>
-                      <td className="border-t border-border px-6 py-4 text-center text-muted">
+                      <td className="border-t border-border px-6 py-4 text-center">
                         <span className="inline-flex justify-center">
-                          {row.legacy === false ? <CrossIcon /> : row.legacy}
+                          <CheckIcon />
                         </span>
                       </td>
                     </tr>
@@ -471,17 +461,17 @@ export default function FeaturesPage() {
                 Ready to put it all together?
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-                Open a ZorianPay account and get access to multi-currency
-                balances, crypto card issuance, and blockchain settlement from
-                day one.
+                Talk to our team about accepting digital asset payments,
+                integrating our enterprise APIs, or partnering with ZorianPay
+                as a bank or payment provider.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button href="https://app.zorianpay.com/register">
-                  Open an Account
+                <Button href="/contact">
+                  Talk to Sales
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button href="/crypto-card" variant="secondary">
-                  Discover the Crypto Card
+                  Explore Card Programs
                 </Button>
               </div>
             </div>

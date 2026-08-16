@@ -27,7 +27,7 @@ import {
 export const metadata: Metadata = {
   title: "Security & Compliance",
   description:
-    "Learn how ZorianPay protects your funds and data with bank-grade encryption, cold-storage custody, biometric authentication, fraud monitoring, and a regulatory-first compliance approach.",
+    "Learn how ZorianPay's Compliance Engine protects merchants, enterprises, and customers with bank-grade encryption, cold-storage custody, transaction monitoring, and a regulatory-first compliance approach across GCC, Europe, Asia, and Africa.",
 };
 
 const pillars = [
@@ -128,16 +128,17 @@ export default function SecurityPage() {
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                Your money, protected by{" "}
+                Compliance by{" "}
                 <span className="gold-gradient-text">design</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-6 text-balance text-lg leading-8 text-muted">
-                Security isn&apos;t a feature we bolt on — it&apos;s the foundation
-                ZorianPay is built on. From encryption and cold storage to
-                regulatory partnerships, every layer of the platform is designed
-                to protect your funds and your data.
+                Security and compliance aren&apos;t features we bolt on — they&apos;re
+                the foundation ZorianPay&apos;s Compliance Engine is built on.
+                Every transaction routes through compliance verification and
+                smart routing, from encryption and cold storage to regulatory
+                partnerships across the markets we serve.
               </p>
             </Reveal>
             <Reveal delay={240}>
@@ -168,12 +169,15 @@ export default function SecurityPage() {
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {pillars.map((pillar, i) => (
               <Reveal key={pillar.title} delay={i * 60}>
-                <Card className="h-full">
+                <Card className="relative h-full overflow-hidden">
+                  <span aria-hidden="true" className="numeral-watermark">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <IconBadge>
                     <pillar.icon className="h-5 w-5" />
                   </IconBadge>
-                  <h3 className="mt-4 text-lg font-semibold text-foreground">{pillar.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">{pillar.description}</p>
+                  <h3 className="relative mt-4 text-lg font-semibold text-foreground">{pillar.title}</h3>
+                  <p className="relative mt-2 text-sm leading-6 text-muted">{pillar.description}</p>
                 </Card>
               </Reveal>
             ))}
@@ -242,7 +246,7 @@ export default function SecurityPage() {
             <SectionHeading
               eyebrow="Trust & Compliance"
               title="A regulatory-first approach"
-              description="Shivacha Technologies LLC, the operator of ZorianPay, is committed to building a compliant platform by working alongside licensed banking and payment partners and adapting to evolving regulatory frameworks."
+              description="Shivacha Technologies LLC, the operator of ZorianPay, is committed to building a compliant platform by working alongside licensed banking and payment partners and adapting to evolving regulatory frameworks as ZorianPay expands across the GCC, Europe, Asia, and Africa."
             />
           </Reveal>
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">

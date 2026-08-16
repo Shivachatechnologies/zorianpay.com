@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Frequently asked questions about ZorianPay — getting started, multi-currency accounts, the crypto card, security & compliance, and fees & billing.",
+    "Frequently asked questions about ZorianPay — the financial infrastructure platform, merchant payments, multi-currency accounts, card programs, security & compliance, and fees & billing.",
 };
 
 const categories = [
@@ -17,22 +17,47 @@ const categories = [
       {
         question: "What is ZorianPay?",
         answer:
-          "ZorianPay is a blockchain-powered crypto card and multi-currency wallet platform operated by Shivacha Technologies LLC. It combines multi-currency wallets, crypto card issuance, and blockchain-based settlement so individuals and businesses can hold, send, and spend money globally from a single account.",
+          "ZorianPay is a financial infrastructure platform operated by Shivacha Technologies LLC. Through a secure, API-first infrastructure, ZorianPay connects merchants, enterprises, banks, payment providers, and digital assets into one unified financial ecosystem — enabling merchants to accept supported digital asset payments while receiving settlement directly into their existing bank accounts in local currency.",
       },
       {
-        question: "How do I open a ZorianPay account?",
+        question: "How do I get started with ZorianPay?",
         answer:
-          "Sign up through our contact page to get started, or request access via the website. Once you've completed our streamlined identity verification (KYC), you can fund your account via bank transfer, card, or crypto wallet and start using your multi-currency balances immediately.",
+          "Reach out through our contact page to talk to our team. Once we understand whether you're a merchant, an enterprise, or an individual customer, we'll walk you through onboarding, identity verification (KYC), and integration.",
       },
       {
         question: "Who can use ZorianPay?",
         answer:
-          "ZorianPay is built for individuals, freelancers, remote teams, and businesses that operate across borders. We support both Personal accounts for everyday use and Business accounts with multi-user access and API integrations.",
+          "ZorianPay serves merchants accepting digital asset payments, enterprises integrating financial services through our APIs, banks and payment providers expanding through partnership, and individual customers using our Business Accounts and Card Programs.",
       },
       {
         question: "Is there a mobile app?",
         answer:
           "ZorianPay is designed to work seamlessly across web and mobile, with the same account, card controls, and transaction history available wherever you sign in.",
+      },
+    ],
+  },
+  {
+    title: "For Merchants & Enterprises",
+    items: [
+      {
+        question: "How does the Universal Merchant QR work?",
+        answer:
+          "Customers scan a single merchant QR code, choose their preferred digital asset, and complete a secure, compliance-verified payment. ZorianPay handles smart routing, asset conversion, and settlement — merchants don't need to manage a digital asset wallet.",
+      },
+      {
+        question: "How does local currency settlement work?",
+        answer:
+          "Once a payment is verified and converted, funds settle directly into the merchant's existing bank account in local currency through our Settlement Engine — no separate crypto wallet or manual conversion required.",
+      },
+      {
+        question: "Can I integrate ZorianPay into my own platform?",
+        answer:
+          "Yes. Our Enterprise APIs let you embed digital asset payment acceptance, business accounts, and settlement directly into your own product, with webhooks for real-time reconciliation and a merchant dashboard for reporting.",
+      },
+      {
+        question: "Does ZorianPay offer white-label solutions?",
+        answer:
+          "Yes. Banks, payment providers, and enterprises can license the ZorianPay platform as a white-label solution, extending merchant infrastructure and settlement capabilities under their own brand.",
       },
     ],
   },
@@ -146,9 +171,10 @@ export default function FaqPage() {
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-6 text-lg leading-8 text-muted">
-                Everything you need to know about ZorianPay accounts,
-                currencies, the crypto card, security, and billing. Can&apos;t find
-                what you&apos;re looking for? Reach out to our team directly.
+                Everything you need to know about the ZorianPay platform —
+                merchant payments, settlement, accounts, card programs,
+                security, and billing. Can&apos;t find what you&apos;re looking for?
+                Reach out to our team directly.
               </p>
             </Reveal>
           </div>
@@ -198,7 +224,7 @@ export default function FaqPage() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button href="/features" variant="secondary">
-                  Explore Features
+                  Explore the Platform
                 </Button>
               </div>
             </div>

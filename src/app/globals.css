@@ -194,3 +194,108 @@ html.light .card-surface:hover::after {
 .animate-ticker {
   animation: ticker 40s linear infinite;
 }
+
+/* Premium ambient texture */
+.dot-grid {
+  background-image: radial-gradient(var(--border-strong) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 40%, transparent 90%);
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 40%, transparent 90%);
+}
+
+html.light .dot-grid {
+  opacity: 0.6;
+}
+
+/* Radar-style pulse ring behind orbit/marker nodes */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: var(--gold);
+  animation: pulse-ring 2.6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-orbit-spin {
+  animation: orbit-spin 60s linear infinite;
+}
+
+@keyframes orbit-spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-orbit-spin-reverse {
+  animation: orbit-spin-reverse 46s linear infinite;
+}
+
+@keyframes dash-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.orbit-line {
+  stroke-dasharray: 4 6;
+  stroke-dashoffset: 200;
+  animation: dash-draw 2.4s ease forwards;
+}
+
+/* Large faint numeral watermark for editorial / annual-report feel */
+.numeral-watermark {
+  position: absolute;
+  right: 0.75rem;
+  bottom: -0.5rem;
+  font-size: 5.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--foreground);
+  opacity: 0.04;
+  pointer-events: none;
+  letter-spacing: -0.04em;
+}
+
+html.light .numeral-watermark {
+  opacity: 0.05;
+}
+
+/* Connected timeline line for roadmap */
+.timeline-line {
+  background: linear-gradient(90deg, transparent, var(--gold) 8%, var(--gold) 92%, transparent);
+  opacity: 0.35;
+}
+
+.timeline-line-v {
+  background: linear-gradient(180deg, transparent, var(--gold) 8%, var(--gold) 92%, transparent);
+  opacity: 0.35;
+}
+
+/* Frosted glass panel for layered hero surfaces */
+.glass-panel {
+  background: color-mix(in oklab, var(--surface) 70%, transparent);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+@keyframes count-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-count-in {
+  animation: count-fade-in 0.5s ease forwards;
+}

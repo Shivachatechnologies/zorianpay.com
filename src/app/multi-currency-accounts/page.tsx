@@ -23,9 +23,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Multi-Currency Wallets",
+  title: "Settlement & Business Accounts",
   description:
-    "Hold, send, and convert between 30+ fiat and crypto currencies in a single ZorianPay wallet, with local account details for major regions via banking partners and instant conversion.",
+    "ZorianPay Business Accounts and Settlement Engine: hold, send, and convert between 30+ fiat and crypto currencies, and receive merchant settlement directly into local currency, with local account details for major regions via banking partners.",
 };
 
 const currencies = [
@@ -132,30 +132,32 @@ export default function MultiCurrencyAccountsPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
               <div className="flex justify-center">
-                <Eyebrow>Multi-Currency Wallets</Eyebrow>
+                <Eyebrow>Settlement Engine & Business Accounts</Eyebrow>
               </div>
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                One wallet, <span className="gold-gradient-text">30+ currencies</span>, zero borders
+                One account, <span className="gold-gradient-text">30+ currencies</span>, local settlement everywhere
               </h1>
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-6 text-balance text-lg leading-8 text-muted">
-                Hold fiat and crypto side by side in a single ZorianPay wallet.
-                Get local account details for major regions via our banking
-                partners, convert instantly between currencies, and manage
-                every balance from one dashboard.
+                ZorianPay&apos;s Settlement Engine converts accepted digital
+                asset payments and settles funds directly into a merchant or
+                enterprise&apos;s existing bank account, in local currency —
+                no wallet management required. Business Accounts hold fiat and
+                crypto side by side, with local account details for major
+                regions via our banking partners.
               </p>
             </Reveal>
             <Reveal delay={240}>
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button href="https://app.zorianpay.com/register">
-                  Open a Multi-Currency Wallet
+                <Button href="/contact">
+                  Talk to Sales
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button href="/features" variant="secondary">
-                  Explore All Features
+                  Explore the Platform
                 </Button>
               </div>
             </Reveal>
@@ -269,15 +271,18 @@ export default function MultiCurrencyAccountsPage() {
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {regions.map((region, i) => (
               <Reveal key={region.region} delay={i * 60}>
-                <Card className="h-full">
+                <Card className="relative h-full overflow-hidden">
+                  <span aria-hidden="true" className="numeral-watermark">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <IconBadge>
                     <Landmark className="h-5 w-5" />
                   </IconBadge>
-                  <div className="mt-4 flex items-center gap-2">
+                  <div className="relative mt-4 flex items-center gap-2">
                     <span className="text-2xl leading-none">{region.flag}</span>
                     <h3 className="text-lg font-semibold text-foreground">{region.region}</h3>
                   </div>
-                  <p className="mt-2 text-sm leading-6 text-muted">{region.details}</p>
+                  <p className="relative mt-2 text-sm leading-6 text-muted">{region.details}</p>
                 </Card>
               </Reveal>
             ))}
@@ -323,19 +328,19 @@ export default function MultiCurrencyAccountsPage() {
                 </IconBadge>
               </div>
               <h2 className="mt-5 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Hold the world&apos;s money in one wallet
+                Settle in local currency, hold the world&apos;s money in one account
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-                Open a ZorianPay multi-currency wallet and start receiving,
-                converting, and spending across 30+ currencies today.
+                Talk to our team about a ZorianPay Business Account and start
+                receiving, converting, and settling across 30+ currencies.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Button href="/contact">
-                  Open a Wallet
+                  Talk to Sales
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button href="/crypto-card" variant="secondary">
-                  Explore the Crypto Card
+                  Explore Card Programs
                 </Button>
               </div>
             </div>
