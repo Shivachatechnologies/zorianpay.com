@@ -5,11 +5,12 @@ import {
   Eyebrow,
   Button,
   Card,
-  Stat,
   IconBadge,
   Pill,
 } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
+import { Counter } from "@/components/Counter";
+import { NetworkOrbit } from "@/components/NetworkOrbit";
 import Link from "next/link";
 import {
   ScanLine,
@@ -27,13 +28,29 @@ import {
   Sparkles,
   Handshake,
   Globe,
+  TrendingUp,
+  Target,
 } from "lucide-react";
 
 const stats = [
-  { value: "4", label: "Target regions: GCC, Europe, Asia & Africa" },
-  { value: "8+", label: "Revenue verticals across the platform" },
-  { value: "API-First", label: "Infrastructure built for integration" },
-  { value: "2030", label: "Vision for global financial infrastructure" },
+  { value: "4", label: "Target regions: GCC, Europe, Asia & Africa", icon: Target },
+  { value: "8+", label: "Revenue verticals across the platform", icon: TrendingUp },
+  { value: "API-First", label: "Infrastructure built for integration", icon: Code2 },
+  { value: "2030", label: "Vision for global financial infrastructure", icon: Sparkles },
+];
+
+const regionNodes = [
+  { icon: Globe, label: "GCC" },
+  { icon: Globe, label: "Europe" },
+  { icon: Globe, label: "Asia" },
+  { icon: Globe, label: "Africa" },
+];
+
+const ecosystemNodes = [
+  { icon: Store, label: "Merchants" },
+  { icon: Building2, label: "Enterprises" },
+  { icon: Landmark, label: "Banks" },
+  { icon: Wallet, label: "Digital Assets" },
 ];
 
 const products = [
@@ -139,6 +156,7 @@ export default function Home() {
       {/* Hero */}
       <Section className="relative overflow-hidden pt-16 sm:pt-24">
         <div className="pointer-events-none absolute inset-0 -z-10 mesh-bg" />
+        <div className="pointer-events-none absolute inset-0 -z-10 dot-grid" />
         <Container>
           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
             <div>
@@ -235,13 +253,26 @@ export default function Home() {
       {/* Stats */}
       <Section className="py-12 sm:py-16">
         <Container>
-          <Reveal>
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-              {stats.map((stat) => (
-                <Stat key={stat.label} value={stat.value} label={stat.label} />
-              ))}
-            </div>
-          </Reveal>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat, i) => (
+              <Reveal key={stat.label} delay={i * 60}>
+                <Card className="relative h-full overflow-hidden">
+                  <span aria-hidden="true" className="numeral-watermark">
+                    0{i + 1}
+                  </span>
+                  <IconBadge>
+                    <stat.icon className="h-5 w-5" />
+                  </IconBadge>
+                  <p className="relative mt-4 text-3xl font-bold gold-gradient-text sm:text-4xl">
+                    <Counter value={stat.value} />
+                  </p>
+                  <p className="relative mt-2 text-sm leading-6 text-muted">
+                    {stat.label}
+                  </p>
+                </Card>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </Section>
 
@@ -259,17 +290,20 @@ export default function Home() {
             {products.map((product, i) => (
               <Reveal key={product.title} delay={i * 60}>
                 <Link href={product.href}>
-                  <Card className="h-full">
+                  <Card className="relative h-full overflow-hidden">
+                    <span aria-hidden="true" className="numeral-watermark">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     <IconBadge>
                       <product.icon className="h-5 w-5" />
                     </IconBadge>
-                    <h3 className="mt-4 text-lg font-semibold text-foreground">
+                    <h3 className="relative mt-4 text-lg font-semibold text-foreground">
                       {product.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted">
+                    <p className="relative mt-2 text-sm leading-6 text-muted">
                       {product.description}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold">
+                    <span className="relative mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold">
                       Learn more <ArrowRight className="h-3.5 w-3.5" />
                     </span>
                   </Card>
@@ -309,28 +343,11 @@ export default function Home() {
                 </Button>
               </div>
             </Reveal>
-            <Reveal delay={120}>
-              <Card className="p-8">
-                <h3 className="text-lg font-semibold text-foreground">
-                  What makes us different
-                </h3>
-                <ul className="mt-6 space-y-3 text-sm text-muted">
-                  {[
-                    "Connects the complete payment journey, not just one financial service",
-                    "Unified infrastructure platform instead of multiple integrations",
-                    "Infrastructure-centric, not product-centric",
-                    "A connected financial ecosystem, not a fragmented customer experience",
-                    "API-first architecture with real interoperability",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
-                        <CheckCircle2 className="h-3 w-3" />
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </Card>
+            <Reveal delay={120} className="flex justify-center">
+              <div className="relative w-full max-w-sm">
+                <div className="absolute -inset-10 -z-10 rounded-full bg-gold/10 blur-3xl" />
+                <NetworkOrbit nodes={ecosystemNodes} centerLabel="ZorianPay" />
+              </div>
             </Reveal>
           </div>
         </Container>
@@ -398,18 +415,9 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                {["GCC", "Europe", "Asia", "Africa"].map((region) => (
-                  <div
-                    key={region}
-                    className="card-surface flex flex-col items-center justify-center gap-2 rounded-2xl py-10 text-center"
-                  >
-                    <Globe className="h-5 w-5 text-gold" />
-                    <span className="text-base font-bold text-foreground">
-                      {region}
-                    </span>
-                  </div>
-                ))}
+              <div className="relative mx-auto w-full max-w-sm">
+                <div className="absolute -inset-10 -z-10 rounded-full bg-gold/10 blur-3xl" />
+                <NetworkOrbit nodes={regionNodes} centerLabel="ZorianPay Network" />
               </div>
             </div>
           </Reveal>

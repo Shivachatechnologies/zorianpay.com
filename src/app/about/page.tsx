@@ -9,6 +9,7 @@ import {
   IconBadge,
 } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
+import { Counter } from "@/components/Counter";
 import {
   ShieldCheck,
   Scale,
@@ -232,11 +233,15 @@ export default function AboutPage() {
               <Card className="p-10">
                 <div className="grid grid-cols-2 gap-6 text-center">
                   <div>
-                    <p className="text-3xl font-bold gold-gradient-text sm:text-4xl">4</p>
+                    <p className="text-3xl font-bold gold-gradient-text sm:text-4xl">
+                      <Counter value="4" />
+                    </p>
                     <p className="mt-2 text-sm text-muted">Target regions</p>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold gold-gradient-text sm:text-4xl">8+</p>
+                    <p className="text-3xl font-bold gold-gradient-text sm:text-4xl">
+                      <Counter value="8+" />
+                    </p>
                     <p className="mt-2 text-sm text-muted">Revenue verticals</p>
                   </div>
                   <div>
@@ -244,7 +249,9 @@ export default function AboutPage() {
                     <p className="mt-2 text-sm text-muted">First architecture</p>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold gold-gradient-text sm:text-4xl">2030</p>
+                    <p className="text-3xl font-bold gold-gradient-text sm:text-4xl">
+                      <Counter value="2030" />
+                    </p>
                     <p className="mt-2 text-sm text-muted">Long-term vision</p>
                   </div>
                 </div>
@@ -307,8 +314,11 @@ export default function AboutPage() {
           <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3">
             {marketExpansion.map((phase, i) => (
               <Reveal key={phase.phase} delay={i * 80}>
-                <Card className="h-full">
-                  <span className="inline-flex items-center rounded-full border border-gold/30 bg-background px-4 py-1.5 text-sm font-bold gold-gradient-text">
+                <Card className="relative h-full overflow-hidden">
+                  <span aria-hidden="true" className="numeral-watermark">
+                    0{i + 1}
+                  </span>
+                  <span className="relative inline-flex items-center rounded-full border border-gold/30 bg-background px-4 py-1.5 text-sm font-bold gold-gradient-text">
                     {phase.phase}
                   </span>
                   <h3 className="mt-4 text-lg font-semibold text-foreground">{phase.title}</h3>
@@ -339,13 +349,49 @@ export default function AboutPage() {
               description="Our ambition extends beyond launching innovative financial products — we're building toward Vision 2030."
             />
           </Reveal>
-          <Reveal delay={80}>
-            <div className="mx-auto mt-16 flex max-w-xl flex-col">
-              {roadmap.map((item, i) => (
+          {/* Desktop: connected horizontal timeline */}
+          <div className="relative mt-20 hidden lg:block">
+            <div className="absolute inset-x-8 top-6 h-px timeline-line" />
+            <div className="relative grid grid-cols-6 gap-2">
+              {roadmap.map((item, i) => {
+                const isLast = i === roadmap.length - 1;
+                return (
+                  <Reveal key={item} delay={i * 80}>
+                    <div className="flex flex-col items-center text-center">
+                      <span
+                        className={`relative flex h-12 w-12 items-center justify-center rounded-full text-sm font-bold ${
+                          isLast
+                            ? "gold-gradient-bg text-black shadow-[0_0_30px_-6px_rgba(240,185,11,0.6)]"
+                            : "border border-gold/40 bg-background text-gold"
+                        }`}
+                      >
+                        {isLast && <span className="pulse-ring" aria-hidden="true" />}
+                        <span className="relative">{i + 1}</span>
+                      </span>
+                      <span className="mt-4 text-sm font-semibold leading-5 text-foreground">
+                        {item}
+                      </span>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Mobile: vertical stacked flow */}
+          <div className="mx-auto mt-16 flex max-w-xl flex-col lg:hidden">
+            {roadmap.map((item, i) => {
+              const isLast = i === roadmap.length - 1;
+              return (
                 <div key={item}>
                   <div className="flex items-center gap-4 rounded-2xl border border-border bg-surface p-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/15 text-sm font-bold text-gold">
-                      {i + 1}
+                    <span
+                      className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
+                        isLast ? "gold-gradient-bg text-black" : "bg-gold/15 text-gold"
+                      }`}
+                    >
+                      {isLast && <span className="pulse-ring" aria-hidden="true" />}
+                      <span className="relative">{i + 1}</span>
                     </span>
                     <span className="text-sm font-semibold text-foreground">{item}</span>
                   </div>
@@ -355,9 +401,9 @@ export default function AboutPage() {
                     </div>
                   )}
                 </div>
-              ))}
-            </div>
-          </Reveal>
+              );
+            })}
+          </div>
         </Container>
       </Section>
 
@@ -371,19 +417,20 @@ export default function AboutPage() {
               description="A large market opportunity, built for the future of digital commerce — with a diversified, scalable, partnership-led business model."
             />
           </Reveal>
-          <Reveal delay={80}>
-            <div className="mt-12 flex flex-wrap justify-center gap-3">
-              {strengths.map((item) => (
-                <span
-                  key={item}
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground"
-                >
-                  <CheckCircle2 className="h-4 w-4 text-gold" />
-                  {item}
-                </span>
-              ))}
-            </div>
-          </Reveal>
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {strengths.map((item, i) => (
+              <Reveal key={item} delay={i * 50}>
+                <div className="card-surface flex h-full flex-col items-center gap-3 rounded-2xl px-4 py-6 text-center transition-all duration-300 hover:border-gold/40 hover:-translate-y-1">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/15 text-gold">
+                    <CheckCircle2 className="h-5 w-5" />
+                  </span>
+                  <span className="text-sm font-semibold leading-5 text-foreground">
+                    {item}
+                  </span>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </Section>
 
@@ -400,14 +447,17 @@ export default function AboutPage() {
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {leadership.map((area, i) => (
               <Reveal key={area.title} delay={i * 60}>
-                <Card className="h-full">
+                <Card className="relative h-full overflow-hidden">
+                  <span aria-hidden="true" className="numeral-watermark">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <IconBadge>
                     <area.icon className="h-5 w-5" />
                   </IconBadge>
-                  <h3 className="mt-4 text-lg font-semibold text-foreground">
+                  <h3 className="relative mt-4 text-lg font-semibold text-foreground">
                     {area.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">{area.description}</p>
+                  <p className="relative mt-2 text-sm leading-6 text-muted">{area.description}</p>
                 </Card>
               </Reveal>
             ))}
