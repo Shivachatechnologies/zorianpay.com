@@ -156,7 +156,7 @@ export default function MultiCurrencyAccountsPage() {
                   Talk to Sales
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="/features" variant="secondary">
+                <Button href="/platform" variant="secondary">
                   Explore the Platform
                 </Button>
               </div>
@@ -196,7 +196,7 @@ export default function MultiCurrencyAccountsPage() {
             Currencies highlighted with a gold ring are digital assets held
             and settled via blockchain rails. New currencies are added
             regularly — see{" "}
-            <Link href="/features" className="inline-flex items-center gap-1 text-gold hover:underline">
+            <Link href="/platform" className="inline-flex items-center gap-1 text-gold hover:underline">
               all platform features <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             .

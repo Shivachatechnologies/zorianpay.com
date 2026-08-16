@@ -165,7 +165,7 @@ function CrossIcon() {
   );
 }
 
-export default function FeaturesPage() {
+export default function PlatformPage() {
   return (
     <>
       {/* Hero */}

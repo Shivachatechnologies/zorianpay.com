@@ -58,7 +58,7 @@ const products = [
     title: "Universal Merchant QR",
     description:
       "One QR code for digital asset payment acceptance — customers scan, choose their asset, and pay in seconds.",
-    href: "/features",
+    href: "/platform",
     icon: ScanLine,
   },
   {
@@ -72,7 +72,7 @@ const products = [
     title: "Enterprise APIs",
     description:
       "A clean, API-first architecture lets enterprises embed digital asset acceptance and settlement into their own platforms.",
-    href: "/features",
+    href: "/platform",
     icon: Code2,
   },
   {
@@ -93,7 +93,7 @@ const products = [
     title: "Merchant Dashboard",
     description:
       "Real-time reporting and business management tools give merchants and enterprises full visibility into every transaction.",
-    href: "/features",
+    href: "/platform",
     icon: LayoutDashboard,
   },
 ];
@@ -185,7 +185,7 @@ export default function Home() {
                     Talk to Sales
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Button>
-                  <Button href="/features" variant="secondary">
+                  <Button href="/platform" variant="secondary">
                     Explore the Platform
                   </Button>
                 </div>
@@ -449,7 +449,7 @@ export default function Home() {
                   Talk to Sales
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="/features" variant="secondary">
+                <Button href="/platform" variant="secondary">
                   Explore the Platform
                 </Button>
               </div>

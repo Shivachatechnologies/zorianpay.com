@@ -517,7 +517,7 @@ export default function AboutPage() {
                   Get in Touch
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="/features" variant="secondary">
+                <Button href="/platform" variant="secondary">
                   Explore the Platform
                 </Button>
               </div>

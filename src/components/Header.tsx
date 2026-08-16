@@ -8,7 +8,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { Container, Button } from "./ui";
 
 const navLinks = [
-  { href: "/features", label: "Platform" },
+  { href: "/platform", label: "Platform" },
   { href: "/multi-currency-accounts", label: "Accounts" },
   { href: "/crypto-card", label: "Card Programs" },
   { href: "/security", label: "Security" },

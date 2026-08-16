@@ -6,7 +6,7 @@ const baseUrl = "https://zorianpay.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/`, changeFrequency: "weekly", priority: 1 },
-    { url: `${baseUrl}/features`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/platform`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/multi-currency-accounts`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/crypto-card`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/security`, changeFrequency: "monthly", priority: 0.7 },

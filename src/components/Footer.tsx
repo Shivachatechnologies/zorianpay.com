@@ -19,7 +19,7 @@ const socials = [
 
 const footerLinks = {
   Platform: [
-    { href: "/features", label: "Platform Overview" },
+    { href: "/platform", label: "Platform Overview" },
     { href: "/multi-currency-accounts", label: "Settlement & Accounts" },
     { href: "/crypto-card", label: "Card Programs" },
     { href: "/security", label: "Security & Compliance" },
