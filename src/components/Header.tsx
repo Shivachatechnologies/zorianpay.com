@@ -9,9 +9,9 @@ import { Container, Button } from "./ui";
 
 const navLinks = [
   { href: "/features", label: "Platform" },
-  { href: "/multi-currency-accounts", label: "Settlement & Accounts" },
+  { href: "/multi-currency-accounts", label: "Accounts" },
   { href: "/crypto-card", label: "Card Programs" },
-  { href: "/security", label: "Security & Compliance" },
+  { href: "/security", label: "Security" },
   { href: "/about", label: "Company" },
 ];
 
@@ -24,14 +24,14 @@ export function Header() {
       <Container className="flex h-20 items-center justify-between">
         <Logo />
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-0.5 lg:flex xl:gap-1">
           {navLinks.map((link) => {
             const active = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                className={`relative whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-medium transition-colors xl:px-4 ${
                   active ? "text-foreground" : "text-muted hover:text-foreground"
                 }`}
               >
@@ -44,15 +44,17 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-2 lg:flex xl:gap-3">
           <ThemeToggle />
           <a
             href="https://app.zorianpay.com"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-border-strong bg-surface px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-border-strong bg-surface px-4 py-2.5 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold xl:px-6 xl:py-3"
           >
             Log In
           </a>
-          <Button href="/contact">Talk to Sales</Button>
+          <Button href="/contact" className="whitespace-nowrap !px-4 !py-2.5 xl:!px-6 xl:!py-3">
+            Talk to Sales
+          </Button>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">

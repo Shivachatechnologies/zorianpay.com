@@ -474,12 +474,15 @@ export default function CryptoCardPage() {
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {controls.map((control, i) => (
               <Reveal key={control.title} delay={i * 60}>
-                <Card className="h-full">
+                <Card className="relative h-full overflow-hidden">
+                  <span aria-hidden="true" className="numeral-watermark">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <IconBadge>
                     <control.icon className="h-5 w-5" />
                   </IconBadge>
-                  <h3 className="mt-4 text-lg font-semibold text-foreground">{control.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">{control.description}</p>
+                  <h3 className="relative mt-4 text-lg font-semibold text-foreground">{control.title}</h3>
+                  <p className="relative mt-2 text-sm leading-6 text-muted">{control.description}</p>
                 </Card>
               </Reveal>
             ))}

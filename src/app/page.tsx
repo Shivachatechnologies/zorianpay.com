@@ -315,7 +315,7 @@ export default function Home() {
       </Section>
 
       {/* Why ZorianPay */}
-      <Section className="section-divider border-t border-border">
+      <Section className="section-divider relative overflow-hidden border-t border-border">
         <Container>
           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
             <Reveal>
@@ -391,7 +391,7 @@ export default function Home() {
       </Section>
 
       {/* Global reach */}
-      <Section className="section-divider border-t border-border">
+      <Section className="section-divider relative overflow-hidden border-t border-border">
         <Container>
           <Reveal>
             <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">

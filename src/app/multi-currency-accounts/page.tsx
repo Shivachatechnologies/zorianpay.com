@@ -271,15 +271,18 @@ export default function MultiCurrencyAccountsPage() {
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {regions.map((region, i) => (
               <Reveal key={region.region} delay={i * 60}>
-                <Card className="h-full">
+                <Card className="relative h-full overflow-hidden">
+                  <span aria-hidden="true" className="numeral-watermark">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <IconBadge>
                     <Landmark className="h-5 w-5" />
                   </IconBadge>
-                  <div className="mt-4 flex items-center gap-2">
+                  <div className="relative mt-4 flex items-center gap-2">
                     <span className="text-2xl leading-none">{region.flag}</span>
                     <h3 className="text-lg font-semibold text-foreground">{region.region}</h3>
                   </div>
-                  <p className="mt-2 text-sm leading-6 text-muted">{region.details}</p>
+                  <p className="relative mt-2 text-sm leading-6 text-muted">{region.details}</p>
                 </Card>
               </Reveal>
             ))}

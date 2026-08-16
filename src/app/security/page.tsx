@@ -169,12 +169,15 @@ export default function SecurityPage() {
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {pillars.map((pillar, i) => (
               <Reveal key={pillar.title} delay={i * 60}>
-                <Card className="h-full">
+                <Card className="relative h-full overflow-hidden">
+                  <span aria-hidden="true" className="numeral-watermark">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <IconBadge>
                     <pillar.icon className="h-5 w-5" />
                   </IconBadge>
-                  <h3 className="mt-4 text-lg font-semibold text-foreground">{pillar.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">{pillar.description}</p>
+                  <h3 className="relative mt-4 text-lg font-semibold text-foreground">{pillar.title}</h3>
+                  <p className="relative mt-2 text-sm leading-6 text-muted">{pillar.description}</p>
                 </Card>
               </Reveal>
             ))}

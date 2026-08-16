@@ -221,17 +221,20 @@ export default function FeaturesPage() {
             {coreProducts.map((item, i) => (
               <Reveal key={item.product} delay={i * 60}>
                 <Link href={item.href}>
-                  <Card className="h-full">
+                  <Card className="relative h-full overflow-hidden">
+                    <span aria-hidden="true" className="numeral-watermark">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     <IconBadge>
                       <item.icon className="h-5 w-5" />
                     </IconBadge>
-                    <h3 className="mt-4 text-lg font-semibold text-foreground">
+                    <h3 className="relative mt-4 text-lg font-semibold text-foreground">
                       {item.product}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted">
+                    <p className="relative mt-2 text-sm leading-6 text-muted">
                       {item.purpose}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold">
+                    <span className="relative mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold">
                       Learn more <ArrowRight className="h-3.5 w-3.5" />
                     </span>
                   </Card>
@@ -310,17 +313,92 @@ export default function FeaturesPage() {
               eyebrow="For Enterprises"
               title="Built to scale with your business"
               description="Enterprise access includes everything merchants rely on, plus the controls and integrations growing teams need."
+              align="left"
             />
           </Reveal>
-          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {enterpriseTools.map((tool, i) => (
-              <Reveal key={tool.title} delay={i * 60}>
-                <Card className="h-full">
-                  <h3 className="text-lg font-semibold text-foreground">{tool.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">{tool.description}</p>
-                </Card>
-              </Reveal>
-            ))}
+          <div className="mt-16 grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
+              {enterpriseTools.map((tool, i) => (
+                <Reveal key={tool.title} delay={i * 60}>
+                  <Card className="h-full">
+                    <h3 className="text-lg font-semibold text-foreground">{tool.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted">{tool.description}</p>
+                  </Card>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal delay={120}>
+              <div className="overflow-hidden rounded-2xl border border-border-strong bg-[#0a0b10] shadow-2xl shadow-black/40">
+                <div className="flex items-center gap-2 border-b border-border-strong bg-surface-2 px-4 py-3">
+                  <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
+                  <span className="ml-3 text-xs font-medium text-white/40">
+                    create-payment.sh
+                  </span>
+                </div>
+                <pre className="overflow-x-auto px-5 py-6 text-[13px] leading-6">
+                  <code className="font-mono">
+                    <span className="text-white/40"># Accept a digital asset payment and settle locally</span>{"\n"}
+                    <span className="text-gold">curl</span>{" "}
+                    <span className="text-white/80">https://api.zorianpay.com/v1/payments</span>{" "}
+                    <span className="text-white/40">\</span>{"\n"}
+                    {"  "}
+                    <span className="text-gold">-H</span>{" "}
+                    <span className="text-emerald-300/80">&quot;Authorization: Bearer sk_live_***&quot;</span>{" "}
+                    <span className="text-white/40">\</span>{"\n"}
+                    {"  "}
+                    <span className="text-gold">-H</span>{" "}
+                    <span className="text-emerald-300/80">&quot;Content-Type: application/json&quot;</span>{" "}
+                    <span className="text-white/40">\</span>{"\n"}
+                    {"  "}
+                    <span className="text-gold">-d</span> <span className="text-white/60">{"'{"}</span>{"\n"}
+                    {"    "}
+                    <span className="text-sky-300/80">&quot;amount&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;250.00&quot;</span>
+                    <span className="text-white/60">,</span>{"\n"}
+                    {"    "}
+                    <span className="text-sky-300/80">&quot;currency&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;USD&quot;</span>
+                    <span className="text-white/60">,</span>{"\n"}
+                    {"    "}
+                    <span className="text-sky-300/80">&quot;asset&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;USDT&quot;</span>
+                    <span className="text-white/60">,</span>{"\n"}
+                    {"    "}
+                    <span className="text-sky-300/80">&quot;settlement&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;local_currency&quot;</span>{"\n"}
+                    <span className="text-white/60">{"  }'"}</span>
+                    {"\n\n"}
+                    <span className="text-white/40"># Response</span>{"\n"}
+                    <span className="text-white/60">{"{"}</span>{"\n"}
+                    {"  "}
+                    <span className="text-sky-300/80">&quot;status&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;settled&quot;</span>
+                    <span className="text-white/60">,</span>{"\n"}
+                    {"  "}
+                    <span className="text-sky-300/80">&quot;settlement_currency&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;USD&quot;</span>
+                    <span className="text-white/60">,</span>{"\n"}
+                    {"  "}
+                    <span className="text-sky-300/80">&quot;amount_settled&quot;</span>
+                    <span className="text-white/60">:</span>{" "}
+                    <span className="text-emerald-300/80">&quot;249.10&quot;</span>{"\n"}
+                    <span className="text-white/60">{"}"}</span>
+                  </code>
+                </pre>
+              </div>
+              <p className="mt-4 text-center text-xs text-muted">
+                Illustrative example — accept a digital asset payment and settle in local currency via the Enterprise API.
+              </p>
+            </Reveal>
           </div>
         </Container>
       </Section>
