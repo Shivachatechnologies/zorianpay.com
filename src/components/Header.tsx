@@ -9,10 +9,10 @@ import { Container, Button } from "./ui";
 
 const navLinks = [
   { href: "/platform", label: "Platform" },
-  { href: "/multi-currency-accounts", label: "Accounts" },
-  { href: "/crypto-card", label: "Card Programs" },
+  { href: "/accounts", label: "Accounts" },
+  { href: "/card-programs", label: "Card Programs" },
   { href: "/security", label: "Security" },
-  { href: "/about", label: "Company" },
+  { href: "/company", label: "Company" },
 ];
 
 export function Header() {

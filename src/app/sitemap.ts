@@ -7,10 +7,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/`, changeFrequency: "weekly", priority: 1 },
     { url: `${baseUrl}/platform`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/multi-currency-accounts`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/crypto-card`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/accounts`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/card-programs`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/security`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/about`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/company`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/contact`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/faq`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/blog`, changeFrequency: "weekly", priority: 0.7 },

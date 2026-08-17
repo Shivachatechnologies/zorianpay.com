@@ -130,7 +130,7 @@ const strengths = [
   "Globally Scalable",
 ];
 
-export default function AboutPage() {
+export default function CompanyPage() {
   return (
     <>
       {/* Hero */}

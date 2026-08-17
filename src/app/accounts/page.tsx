@@ -122,7 +122,7 @@ const useCases = [
   },
 ];
 
-export default function MultiCurrencyAccountsPage() {
+export default function AccountsPage() {
   return (
     <>
       {/* Hero */}
@@ -339,7 +339,7 @@ export default function MultiCurrencyAccountsPage() {
                   Talk to Sales
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="/crypto-card" variant="secondary">
+                <Button href="/card-programs" variant="secondary">
                   Explore Card Programs
                 </Button>
               </div>

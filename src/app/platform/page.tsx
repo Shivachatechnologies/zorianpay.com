@@ -36,25 +36,25 @@ const coreProducts = [
     icon: ScanLine,
     product: "Universal Merchant QR",
     purpose: "Digital asset payment acceptance",
-    href: "/crypto-card",
+    href: "/card-programs",
   },
   {
     icon: Landmark,
     product: "Settlement Engine",
     purpose: "Local currency settlement",
-    href: "/multi-currency-accounts",
+    href: "/accounts",
   },
   {
     icon: Building2,
     product: "Business Accounts",
     purpose: "Business financial operations",
-    href: "/multi-currency-accounts",
+    href: "/accounts",
   },
   {
     icon: Wallet,
     product: "Digital Asset Wallet",
     purpose: "Secure asset management",
-    href: "/crypto-card",
+    href: "/card-programs",
   },
   {
     icon: Code2,
@@ -198,7 +198,7 @@ export default function PlatformPage() {
                   Talk to Sales
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="/crypto-card" variant="secondary">
+                <Button href="/card-programs" variant="secondary">
                   Explore Card Programs
                 </Button>
               </div>
@@ -470,7 +470,7 @@ export default function PlatformPage() {
                   Talk to Sales
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="/crypto-card" variant="secondary">
+                <Button href="/card-programs" variant="secondary">
                   Explore Card Programs
                 </Button>
               </div>

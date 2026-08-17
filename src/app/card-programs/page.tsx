@@ -155,7 +155,7 @@ const orderSteps = [
   },
 ];
 
-export default function CryptoCardPage() {
+export default function CardProgramsPage() {
   return (
     <>
       {/* Hero */}

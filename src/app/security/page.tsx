@@ -310,7 +310,7 @@ export default function SecurityPage() {
                   Contact Our Team
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button href="/crypto-card" variant="secondary">
+                <Button href="/card-programs" variant="secondary">
                   Explore the Crypto Card
                 </Button>
               </div>

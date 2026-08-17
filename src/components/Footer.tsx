@@ -20,12 +20,12 @@ const socials = [
 const footerLinks = {
   Platform: [
     { href: "/platform", label: "Platform Overview" },
-    { href: "/multi-currency-accounts", label: "Settlement & Accounts" },
-    { href: "/crypto-card", label: "Card Programs" },
+    { href: "/accounts", label: "Settlement & Accounts" },
+    { href: "/card-programs", label: "Card Programs" },
     { href: "/security", label: "Security & Compliance" },
   ],
   Company: [
-    { href: "/about", label: "About Us" },
+    { href: "/company", label: "About Us" },
     { href: "/blog", label: "Blog" },
     { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact" },

@@ -65,7 +65,7 @@ const products = [
     title: "Settlement Engine",
     description:
       "Merchants receive settlement directly into their existing bank accounts, in local currency, without managing a wallet.",
-    href: "/multi-currency-accounts",
+    href: "/accounts",
     icon: Landmark,
   },
   {
@@ -86,7 +86,7 @@ const products = [
     title: "Digital Asset Wallet & Card Programs",
     description:
       "Secure asset management and card issuance give customers and businesses a familiar way to hold and spend value.",
-    href: "/crypto-card",
+    href: "/card-programs",
     icon: Wallet,
   },
   {
@@ -337,7 +337,7 @@ export default function Home() {
                 through one integrated platform.
               </p>
               <div className="mt-8">
-                <Button href="/about">
+                <Button href="/company">
                   Read Our Company Profile
                   <ArrowRight className="h-4 w-4" />
                 </Button>
